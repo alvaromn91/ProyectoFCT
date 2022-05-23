@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProyectoFCT\\WPF\\WPF_SchoolerzZ-main\\SZ\\SZ\\SZ.csproj": {}
+    "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\SZ.csproj": {}
   },
   "projects": {
-    "C:\\ProyectoFCT\\WPF\\WPF_SchoolerzZ-main\\SZ\\SZ\\SZ.csproj": {
+    "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\SZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProyectoFCT\\WPF\\WPF_SchoolerzZ-main\\SZ\\SZ\\SZ.csproj",
+        "projectUniqueName": "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\SZ.csproj",
         "projectName": "SZ",
-        "projectPath": "C:\\ProyectoFCT\\WPF\\WPF_SchoolerzZ-main\\SZ\\SZ\\SZ.csproj",
-        "packagesPath": "C:\\Users\\alexv\\.nuget\\packages\\",
-        "outputPath": "C:\\ProyectoFCT\\WPF\\WPF_SchoolerzZ-main\\SZ\\SZ\\obj\\",
+        "projectPath": "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\SZ.csproj",
+        "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alexv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
