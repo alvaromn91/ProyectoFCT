@@ -1,0 +1,55 @@
+﻿<Page x:Class="SZ.Pages.DeleteStudent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SZ.Pages"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DeleteStudent">
+
+    <Grid Background="#7FE8C56A">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="4">
+            <Label Content="Eliminar Estudiante" FontSize="50" FontFamily="Bernard MT Condensed"/>
+        </StackPanel>
+
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Visible" x:Name="sp_Search">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">
+                <TextBox x:Name="tb_Name" FontSize="50" Width="400" materialDesign:HintAssist.Hint="Nombre" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_name" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1">
+                <TextBox x:Name="tb_SN1" FontSize="50" Width="400" materialDesign:HintAssist.Hint="Apellido 1" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_SN1" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1">
+                <TextBox x:Name="tb_SN2" FontSize="50" Width="400" materialDesign:HintAssist.Hint="Apellido 2" FontFamily="Bernard MT Condensed" Margin="30" Cursor="IBeam"/>
+                <TextBlock Text="*" Name="req_SN2" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <Button x:Name="btn_delete" Click="btn_delete_Click" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center" FontSize="40"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="300" FontFamily="Bernard MT" Cursor="Hand" Grid.Column="2" Grid.Row="2">Eliminar</Button>
+        </WrapPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Stretch" Visibility="Hidden">
+            <TextBlock Text="Alumno Borrado" Margin="0,50,0,0" Visibility="Collapsed" x:Name="tb_delete" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FF009688" VerticalAlignment="Top"/>
+            <TextBlock Text="No se ha borrado ningún alumno" Margin="0,50,0,0" Visibility="Collapsed" x:Name="tb_non_deleted" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="red" VerticalAlignment="Top"/>
+        </StackPanel>
+    </Grid>
+</Page>

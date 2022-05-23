@@ -1,0 +1,104 @@
+﻿<Page x:Class="SZ.Pages.GetStudent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SZ.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GetStudent">
+
+    <Grid Background="#7FE8C56A">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="4">
+            <Label Content="Buscar Estudiante" FontSize="50" FontFamily="Bernard MT Condensed"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Visible" x:Name="sp_Search">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" >
+                    <TextBox x:Name="tb_Name" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Nombre" FontFamily="Bernard MT Condensed" Margin="30"/>
+                    <TextBlock Text="*" Name="req_name" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" >
+                <TextBox x:Name="tb_SN1" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 1" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_SN1" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" >
+                <TextBox x:Name="tb_SN2" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 2" FontFamily="Bernard MT Condensed" Margin="30" Cursor="IBeam"/>
+                <TextBlock Text="*" Name="req_SN2" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <Button x:Name="btn_Search" Click="btn_Search_Click" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Grid.Column="2" Grid.Row="2">Buscar</Button>
+        </StackPanel>
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed"  x:Name="sp_Data">
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Nombre: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_name" FontSize="32" Width="280" Text="{Binding Path=Name}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Apellido 1: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_SN1" FontSize="32" Width="280" Text="{Binding Path=Surname1}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Apellido 2: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_SN2" FontSize="32" Width="280" Text="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Fecha Nac.: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_birth" FontSize="32" Width="280" Text="{Binding Path=StringBirth}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Nacionalidad: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Nationality" FontSize="32" Width="280" Text="{Binding Path=Nationality}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="País: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Country" FontSize="32" Width="280" Text="{Binding Path=Country}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Ciudad: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_City" FontSize="32" Width="280" Text="{Binding Path=City}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Código Postal: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_PostalCode" FontSize="32" Width="280" Text="{Binding Path=PostalCode}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Dirección: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Address" FontSize="32" Width="280" Text="{Binding Path=Address}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Email: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Email" FontSize="32" Width="280" Text="{Binding Path=Email}" FontFamily="Bernard MT Condensed" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Obs. Médicas: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Medical" FontSize="24" Width="280" Text="{Binding Path=Medical}" FontFamily="Bernard MT Condensed" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Observaciones: " FontFamily="Bernard MT Condensed" Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Observations" FontSize="24" Width="280" Text="{Binding Path=Observations}" FontFamily="Bernard MT Condensed" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
+            </StackPanel>
+            <StackPanel Margin="30">
+                <Button x:Name="btn_back" Click="btn_back_Click" HorizontalAlignment="Center" Margin="10" Visibility="Collapsed" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand">Atrás</Button>
+            </StackPanel>
+        </WrapPanel>
+        
+    </Grid>
+</Page>

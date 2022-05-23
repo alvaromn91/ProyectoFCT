@@ -1,0 +1,70 @@
+﻿<Page x:Class="SZ.Pages.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SZ.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainMenu">
+
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--
+            Estudiantes
+        -->
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">
+            <Button x:Name="btn_Student" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand"  Content="Estudiantes" Click="btn_Student_Click"/>
+            <StackPanel x:Name="Sub_Students" Visibility="Collapsed">
+                <Button x:Name="btn_S_Buscar" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Buscar" Click="btn_S_Buscar_Click"/>
+                <Button x:Name="btn_S_Add" Click="btn_S_Add_Click" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Añadir"/>
+                <Button x:Name="btn_S_Modify" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Modificar"/>
+                <Button x:Name="btn_S_Delete" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Eliminar" Click="btn_S_Delete_Click"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <!--
+            Docentes
+        -->
+        <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
+            <Button x:Name="btn_Teachers"  FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Docentes" Click="btn_Teachers_Click"/>
+            <StackPanel x:Name="Sub_Teachers" Visibility="Collapsed">
+                <Button x:Name="btn_T_Sea" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Buscar"/>
+                <Button x:Name="btn_T_Add" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Añadir"/>
+                <Button x:Name="btn_T_Mod" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Modificar"/>
+                <Button x:Name="btn_T_Del" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Borrar"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <!--
+            Tutores Legales
+        -->
+        <StackPanel  Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
+            <Button x:Name="btn_Parents" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Padre/Madre" Click="btn_Parents_Click"/>
+            <StackPanel x:Name="Sub_Parents" Visibility="Collapsed">
+                <Button x:Name="btn_P_Search" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Buscar"/>
+                <Button x:Name="btn_P_Modify" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Modificar"/>
+                <Button x:Name="btn_P_Delete" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Eliminar"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <!--
+            Colegio
+        -->
+        <StackPanel VerticalAlignment="Center" Grid.Column="1" Grid.Row="1">
+            <Button x:Name="btn_School" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Colegio" Click="btn_School_Click"/>
+            <StackPanel x:Name="Sub_School" Visibility="Collapsed">
+                <Button x:Name="btn_G_Add" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Añadir Grupo"/>
+                <Button x:Name="btn_G_Modify" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Modificar Grupo"/>
+                <Button x:Name="btn_G_Delete" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Eliminar Grupo"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
