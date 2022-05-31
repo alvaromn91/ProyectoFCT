@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using SZ;
 using SZ.Pages;
 using System;
 using System.Diagnostics;
@@ -53,7 +54,7 @@ namespace SZ.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SZ;component/pages/credits.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SZ;V1.0.0.0;component/pages/credits.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\Credits.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

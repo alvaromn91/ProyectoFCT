@@ -22,7 +22,8 @@ namespace SZ
             InitializeComponent();
             mp.Open(new Uri("Music/song.mp3", UriKind.Relative));
             mp.Volume = 0.3;
-            mostrarPaginaInicio();
+            //mostrarPaginaInicio();
+            new Actividades().ShowDialog();
         }
         public void mostrarPaginaInicio()
         {

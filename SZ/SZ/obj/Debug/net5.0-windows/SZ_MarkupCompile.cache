@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\ProyectoFCT\ProyectoFCT\SZ\SZ\obj\Debug\net5.0-windows\
+=======
+C:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\obj\Debug\net5.0-windows\
+>>>>>>> da2183244f52935d2217e0e6477227995490641f
 SZ
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+<<<<<<< HEAD
 C:\ProyectoFCT\ProyectoFCT\SZ\SZ\App.xaml
 10861567233
 17-2124419495
 15-734770103
 204-217564487
 Blink.xaml;ForoProfesores.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
+=======
+C:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\App.xaml
+10622916286
+17-2124419495
+151026999007
+204-217564487
+Actividades.xaml;Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
+>>>>>>> da2183244f52935d2217e0e6477227995490641f
 
 False
 

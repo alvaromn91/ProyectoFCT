@@ -9,9 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using MaterialDesignThemes.Wpf;
-using MaterialDesignThemes.Wpf.Converters;
-using MaterialDesignThemes.Wpf.Transitions;
 using SZ.Pages;
 using System;
 using System.Diagnostics;
@@ -80,7 +77,7 @@ namespace SZ.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SZ;component/pages/musica.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SZ;V1.0.0.0;component/pages/musica.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\Musica.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

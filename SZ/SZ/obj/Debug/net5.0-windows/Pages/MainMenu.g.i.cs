@@ -229,7 +229,7 @@ namespace SZ.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SZ;component/pages/mainmenu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SZ;V1.0.0.0;component/pages/mainmenu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\MainMenu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 FC:\ProyectoFCT\ProyectoFCT\SZ\SZ\App.xaml;;
 FC:\ProyectoFCT\ProyectoFCT\SZ\SZ\MainWindow.xaml;;
 FC:\ProyectoFCT\ProyectoFCT\SZ\SZ\Pages\AddStudent.xaml;;
@@ -9,4 +10,16 @@ FC:\ProyectoFCT\ProyectoFCT\SZ\SZ\Pages\Login.xaml;;
 FC:\ProyectoFCT\ProyectoFCT\SZ\SZ\Pages\MainMenu.xaml;;
 FC:\ProyectoFCT\ProyectoFCT\SZ\SZ\Pages\Musica.xaml;;
 FC:\ProyectoFCT\ProyectoFCT\SZ\SZ\ForoProfesores.xaml;;
+=======
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\App.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Actividades.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\MainWindow.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Pages\AddStudent.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Pages\Credits.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Pages\DeleteStudent.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Pages\GetStudent.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Pages\Login.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Pages\MainMenu.xaml;;
+FC:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\Pages\Musica.xaml;;
+>>>>>>> da2183244f52935d2217e0e6477227995490641f
 

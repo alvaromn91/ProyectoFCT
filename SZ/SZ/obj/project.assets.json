@@ -971,11 +971,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\SZ.csproj",
       "projectName": "SZ",
       "projectPath": "C:\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\SZ.csproj",
       "packagesPath": "C:\\Users\\admin-dam2b\\.nuget\\packages\\",
       "outputPath": "C:\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\SZ.csproj",
+      "projectName": "SZ",
+      "projectPath": "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\SZ.csproj",
+      "packagesPath": "C:\\Users\\admin-dam2b\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\obj\\",
+>>>>>>> da2183244f52935d2217e0e6477227995490641f
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin-dam2b\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1035,7 +1043,11 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> da2183244f52935d2217e0e6477227995490641f
       }
     }
   },
