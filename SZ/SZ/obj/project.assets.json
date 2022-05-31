@@ -966,19 +966,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oscar\\.nuget\\packages\\": {}
+    "C:\\Users\\admin-dam2b\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\SZ.csproj",
+      "projectUniqueName": "C:\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\SZ.csproj",
       "projectName": "SZ",
-      "projectPath": "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\SZ.csproj",
-      "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oscar\\Desktop\\SchoolerzZ\\FCT\\SZ\\SZ\\obj\\",
+      "projectPath": "C:\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\SZ.csproj",
+      "packagesPath": "C:\\Users\\admin-dam2b\\.nuget\\packages\\",
+      "outputPath": "C:\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin-dam2b\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1035,7 +1035,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   },
