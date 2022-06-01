@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\oscar\Desktop\SchoolerzZ\FCT\SZ\SZ\App.xaml
-9787690326
+11696793193
 17-2124419495
-16-581423784
+19-444685852
 2041053528640
-Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
+Actividades.xaml;Blink.xaml;ForoProfesores.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
 
-False
+True
 

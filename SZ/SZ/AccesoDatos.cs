@@ -12,8 +12,13 @@ namespace SZ
 {
     public class AccesoDatos
     {
+<<<<<<< HEAD
+        string connectionString = "datasource=localhost;port=3306;username=root;password=1234;database=schoolerzz;";
+        //string connectionString = "datasource=localhost;port=3306;username=Alex;password=1234;database=schoolerzz;";
+=======
         //string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
-        string connectionString = "datasource=localhost;port=3306;username=Alex;password=1234;database=schoolerzz;";
+        string connectionString = "datasource=172.16.51.7;port=3306;username=alvaro;password=1234;database=projectfct;";
+>>>>>>> da2183244f52935d2217e0e6477227995490641f
         //string connectionString = "datasource=172.16.51.7;port=3306;username=root;password=1234;database=schoolerzz;";
 
         MySqlConnection databaseConnection;
@@ -25,6 +30,8 @@ namespace SZ
         public AccesoDatos(string servidorDatos, string puerto, string u, string pwd, string bbdd)
         {
             databaseConnection = new MySqlConnection("datasource=" + servidorDatos + ";port=" + puerto + ";username=" + u + ";password= " + pwd + ";database=" + bbdd + ";");
+
+
         }
         private void EstablecerConexion()
         {

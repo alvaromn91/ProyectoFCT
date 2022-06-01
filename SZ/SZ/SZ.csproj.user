@@ -7,6 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Update="ForoProfesores.xaml.cs">
+=======
+    <Compile Update="Actividades.xaml.cs">
+>>>>>>> da2183244f52935d2217e0e6477227995490641f
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Credits.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,7 +28,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Actividades.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Blink.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ForoProfesores.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
