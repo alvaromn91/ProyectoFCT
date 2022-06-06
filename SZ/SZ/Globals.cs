@@ -18,13 +18,20 @@ namespace SZ
                 minigames = new Dictionary<string, string>();
 
             //minigames.Add( "appname" , ConfigurationManager.AppSettings["appname"] ?? null);
-            minigames.Add( "appname", ReadAppConfig("appname"));
+            minigames.Add( "appname", ReadAppConfig<string>("appname"));
         }
 
-        public static string ReadAppConfig(string app)
+        public static T ReadAppConfig<T>(string name, T def = default)
         {
-            var data = ConfigurationManager.AppSettings[app] ?? null;
-            return data;
+
+            T value = def;
+            var data = ConfigurationManager.AppSettings[name];
+            try
+            {
+                value = (T)Convert.ChangeType(data, typeof(T));
+            }
+            catch { }
+            return value;
         }
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿SZ
 1.0.0.0
 
@@ -18,3 +19,25 @@ Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\Delete
 
 True
 
+=======
+﻿SZ
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\oscar\Desktop\SchoolerzZ\FCT\SZ\SZ\obj\Debug\net5.0-windows\
+SZ
+none
+false
+TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+C:\Users\oscar\Desktop\SchoolerzZ\FCT\SZ\SZ\App.xaml
+11696793193
+17-2124419495
+19-444685852
+2041053528640
+Actividades.xaml;Blink.xaml;ForoProfesores.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
+
+True
+
+>>>>>>> 3db4137235c5db47980da3658d142863c12fde34
