@@ -145,7 +145,9 @@ CREATE PROCEDURE PA_ANADIR_TUTOR(in pv_nombre Varchar(50),
 
 
 BEGIN
-
+DECLARE vb_id INT;
+DECLARE vv_nick VARCHAR(12);
+DECLARE vv_contrasena TEXT;
 INSERT INTO TUTORES (NOMBRE,
                     APELLIDO_1,
                     APELLIDO_2,
@@ -159,19 +161,28 @@ INSERT INTO TUTORES (NOMBRE,
                     DELETED,
                     F_BORRADO)
                     VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email,0, NULL);
-
+SET pi_r = 1;
 set vb_id = (SELECT ID FROM TUTORES WHERE NOMBRE like pv_nombre and APELLIDO_1 LIKE pv_apellido1 and APELLIDO_2 LIKE pv_apellido2);
-SET vv_nick = PA_CREAR_NICK('P', pt_colegio, vb_id);
--- set vv_contrasena = ---------
-
+SET pi_r = 2;
+CALL PA_CREAR_NICK('P', pt_colegio, vb_id, @TEMP);
+SET vv_nick = (SELECT @TEMP);
+SET pi_r = 3;
+SET @TEMP = '';
+CALL PA_GENERAR_CONTRASENA(@TEMP);
+set vv_contrasena = (SELECT @TEMP);
+SET pi_r = 4;
 UPDATE TUTORES SET NICK = vv_nick WHERE ID = vb_id;
--- UPDATE TUTORES SET CONTRASENA = ¿¿¿??? WHERE ID = vb_id;
+SET pi_r = 5;
+UPDATE TUTORES SET CONTRASENA = vv_contrasena WHERE ID = vb_id;
+SET pi_r = 6;
 if TELEFONO_1 not like '' OR TELEFONO_1 IS NOT NULL then
 	update TUTORES set TELEFONO_1 = pv_telefono1 where ID = vb_id;
+    SET pi_r = 7;
 end if;
 
-if TELEFONO_2 not like '' OR TELEFONO_1 IS NOT NULL then
+if TELEFONO_2 not like '' OR TELEFONO_2 IS NOT NULL then
 	update TUTORES set TELEFONO_2 = pv_telefono2 where ID = vb_id;
+    SET pi_r = 8;
 end if;
 END // 
 DELIMITER ;
@@ -196,10 +207,9 @@ CREATE PROCEDURE pa_anadir_manager(in pv_nombre Varchar(50),
                                     out pi_r INT)
 
 BEGIN
-set vb_id = (SELECT ID FROM MANAGER_COLEGIO WHERE NOMBRE like pv_nombre and APELLIDO_1 LIKE pv_apellido1 and APELLIDO_2 LIKE pv_apellido2);
-SET vv_nick = PA_CREAR_NICK('M', pt_colegio, vb_id);
-set vv_contrasena = ---------
-
+DECLARE vb_id INT;
+DECLARE vv_nick VARCHAR(12);
+DECLARE vv_contrasena TEXT;
 INSERT INTO MANAGER_COLEGIO (NOMBRE,
                             APELLIDO_1,
                             APELLIDO_2,
@@ -211,27 +221,38 @@ INSERT INTO MANAGER_COLEGIO (NOMBRE,
                             DIRECCION,
                             EMAIL,
                             ID_COLEGIO)
-                            VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email, pi_idColegio)
+                            VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email, pi_idColegio);
+SET pi_r = 1;
+set vb_id = (SELECT ID FROM MANAGER_COLEGIO WHERE NOMBRE like pv_nombre and APELLIDO_1 LIKE pv_apellido1 and APELLIDO_2 LIKE pv_apellido2);
+SET pi_r = 2;
+CALL PA_CREAR_NICK('M', pt_colegio, vb_id, @TEMP);
+SET vv_nick = (SELECT @TEMP);
+SET pi_r = 3;
+SET @TEMP = '';
+CALL PA_GENERAR_CONTRASENA(@TEMP);
+set vv_contrasena = (SELECT @TEMP);
+SET pi_r = 4;
 
-SET vv_nick = -------
-set vv_contrasena = ---------
-
-UPDATE MANAGER_COLEGIO SET NICK = ¿¿¿??? WHERE ID = vb_id;
-UPDATE MANAGER_COLEGIO SET CONTRSENA = ¿¿¿??? WHERE ID = vb_id;
-
-if TELEFONO_1 not like '' then
-	update MANAGER_COLEGIO set TELEFONO_1 = pv_telefono1 where IF = vb_id;
+UPDATE MANAGER_COLEGIO SET NICK = vv_nick WHERE ID = vb_id;
+SET pi_r = 5;
+UPDATE MANAGER_COLEGIO SET CONTRSENA = vv_contrasena WHERE ID = vb_id;
+SET pi_r = 6;
+if TELEFONO_1 not like '' OR TELEFONO_1 IS NOT NULL then
+	update MANAGER_COLEGIO set TELEFONO_1 = pv_telefono1 where ID = vb_id;
+    SET pi_r = 7;
 end if;
 
-if TELEFONO_2 not like '' then
-	update MANAGER_COLEGUI set TELEFONO_2 = pv_telefono2 where IF = vb_id;
+if TELEFONO_2 not like '' OR TELEFONO_2 IS NOT NULL then
+	update MANAGER_COLEGUI set TELEFONO_2 = pv_telefono2 where ID = vb_id;
+    SET pi_r = 8;
 end if;
-// DELIMITER;
+END 
+//DELIMITER ;
 
-DROP PROCEDURE IF EXISTS pa_AnadirDocente
+DROP PROCEDURE IF EXISTS pa_anadir_docente;
 
-DELIEMTER //
-CREATE PROCEDURE pa_AnadirDocente(in pv_nombre Varchar(50),
+DELIMITER //
+CREATE PROCEDURE pa_anadir_docente(in pv_nombre Varchar(50),
                                     in pv_apellido1 varchar(100),
                                     in pv_apellido2 varchar(100),
                                     in pdt_nacimiento date,
@@ -246,7 +267,9 @@ CREATE PROCEDURE pa_AnadirDocente(in pv_nombre Varchar(50),
                                     out pi_r INT)
 
 BEGIN
-
+DECLARE vb_id INT;
+DECLARE vv_nick VARCHAR(12);
+DECLARE vv_contrasena TEXT;
 INSERT INTO DOCENTES (NOMBRE,
                     APELLIDO_1,
                     APELLIDO_2,
@@ -256,21 +279,31 @@ INSERT INTO DOCENTES (NOMBRE,
                     CIUDAD,
                     CP,
                     DIRECCION,
-                    EMAIL,)
-                    VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email)
+                    EMAIL)
+                    VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email);
+SET pi_r = 1;
+set vb_id = (SELECT ID FROM DOCENTES WHERE NOMBRE like pv_nombre and APELLIDO_1 LIKE pv_apellido1 and APELLIDO_2 LIKE pv_apellido2);
+SET pi_r = 2;
+CALL PA_CREAR_NICK('T', pt_colegio, vb_id, @TEMP);
+SET vv_nick = (SELECT @TEMP);
+SET pi_r = 3;
+SET @TEMP = '';
+CALL PA_GENERAR_CONTRASENA(@TEMP);
+set vv_contrasena = (SELECT @TEMP);
+SET pi_r = 4;
 
-set vb_id = SELECT ID FROM DOCENTES WHERE NOMBRE like pv_nombre and APELLIDO_1 LIKE pv_apellido1 and APELLIDO_2 LIKE pv_apellido2
-SET vv_nick = -------
-set vv_contrasena = ---------
-
-UPDATE DOCENTES SET NICK = ¿¿¿??? WHERE ID = vb_id;
-UPDATE DOCENTES SET CONTRSENA = ¿¿¿??? WHERE ID = vb_id;
-
-if TELEFONO_1 not like '' then
-	update DOCENTES set TELEFONO_1 = pv_telefono1 where IF = vb_id;
+UPDATE DOCENTES SET NICK = vv_nick WHERE ID = vb_id;
+SET pi_r = 5;
+UPDATE DOCENTES SET CONTRSENA = vv_contrasena WHERE ID = vb_id;
+SET pi_r = 6;
+if TELEFONO_1 not like '' OR TELEFONO_1 IS NOT NULL then
+	update DOCENTES set TELEFONO_1 = pv_telefono1 where ID = vb_id;
+    SET pi_r = 7;
 end if;
 
-if TELEFONO_2 not like '' then
-	update DOCENTES set TELEFONO_2 = pv_telefono2 where IF = vb_id;
+if TELEFONO_2 not like '' OR TELEFONO_2 IS NOT NULL then
+	update DOCENTES set TELEFONO_2 = pv_telefono2 where ID = vb_id;
+    SET pi_r = 8;
 end if;
-// DELIMITER;
+END
+// DELIMITER ;
