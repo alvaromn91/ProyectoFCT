@@ -47,7 +47,6 @@ namespace SZ
             Observations = observations;
             PhotoRoute = photoRoute;
             StringBirth = Birth.ToString("dd/MM/yyyy");
-
         }
 
         public string Name { get => _name; set => _name = value; }

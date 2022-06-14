@@ -69,7 +69,8 @@ namespace SZ.Pages
                     req2.Foreground = Brushes.Red;
                 }
                 AccesoDatos con = new AccesoDatos();
-                int r = con.Login(rol, tb_User.Text.ToString(), tb_Pass.Password.ToString());
+                //int r = con.Login(rol, tb_User.Text.ToString(), tb_Pass.Password.ToString());
+                int r = 0;
                 if (r == 0)
                 {
                     tb_wrong_pass.Visibility = Visibility.Collapsed;

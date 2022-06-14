@@ -23,11 +23,13 @@ namespace SZ
             mp.Open(new Uri("Music/song.mp3", UriKind.Relative));
             mp.Volume = 0.3;
             mostrarPaginaInicio();
+           
         }
         public void mostrarPaginaInicio()
         {
             App.Parent = this;
-            this.parent.Navigate(login);
+            //this.parent.Navigate(login);
+            this.parent.Navigate(new GetStudent());
         }
 
         private void btn_Search_S_Click(object sender, RoutedEventArgs e)

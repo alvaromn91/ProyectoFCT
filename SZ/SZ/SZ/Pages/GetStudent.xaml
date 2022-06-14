@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SZ.Pages"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:fa="http://schemas.fontawesome.io/icons/"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -98,7 +98,14 @@
             <StackPanel Margin="30">
                 <Button x:Name="btn_back" Click="btn_back_Click" HorizontalAlignment="Center" Margin="10" Visibility="Collapsed" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand">Atrás</Button>
             </StackPanel>
+            <Button Width="100" Height="80" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" FontFamily="Bernard MT" Click="BuscarEstudiante">
+                <Button.Content>
+                    <fa:ImageAwesome Icon="search" Foreground="AliceBlue" Width="40" Height="40" RenderTransformOrigin="0.601,-0.133"/>
+                </Button.Content>
+            </Button>
         </WrapPanel>
-        
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            
+        </StackPanel>
     </Grid>
 </Page>

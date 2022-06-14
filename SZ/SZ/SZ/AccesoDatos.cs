@@ -13,7 +13,7 @@ namespace SZ
     public class AccesoDatos
     {
         //string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
-        string connectionString = "datasource=localhost;port=3306;username=Alex;password=1234;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=oscar;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=172.16.51.7;port=3306;username=root;password=1234;database=schoolerzz;";
 
         MySqlConnection databaseConnection;
@@ -129,14 +129,16 @@ namespace SZ
             return s;
         }
 
-        public List<string> GetStudent(string name, string surname1, string surname2)
+        public List<object> GetStudent(string name, string surname1, string surname2)
         {
-            List<string> lista = new List<string>();
-            MySqlCommand cmd = new MySqlCommand("pa_GetStudentByName", databaseConnection);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new MySqlParameter("pv_Name", name));
-            cmd.Parameters.Add(new MySqlParameter("pv_SN1", surname1));
-            cmd.Parameters.Add(new MySqlParameter("pv_SN2", surname2));
+            List<object> lista = new List<object>();
+            string sql = @"SELECT * FROM vw_Datos_Alumnos WHERE Nombre = @name AND Apellido_1 = @ap1 AND Apellido_2 = @ap2";
+           
+            MySqlCommand cmd = new MySqlCommand(sql, databaseConnection);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new MySqlParameter("@name", name));
+            cmd.Parameters.Add(new MySqlParameter("@ap1", surname1));
+            cmd.Parameters.Add(new MySqlParameter("@ap2", surname2));
 
             EstablecerConexion();
 
@@ -146,11 +148,10 @@ namespace SZ
             {
                 for (int i = 0; i < rdr.FieldCount; i++)
                 {
-                    lista.Add(rdr.GetValue(i).ToString());
-                    //MessageBox.Show(rdr.GetValue(i).ToString());
+                    var result = rdr.GetValue(i);
+                    lista.Add(result);
                 }
-            }
-            
+            }            
             rdr.Close();
             CerrarConexion();
             
