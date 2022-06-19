@@ -26,10 +26,22 @@ namespace SZ
         private string _password;
         private string _stringBirth;
         private string _doc_nick;
+        private string nick;
         public Student() 
         { 
 
         }
+
+        public Student(string nick)
+        {
+            AccesoDatos nuevo = new AccesoDatos();
+            Nick = nick;
+            List<string> lista = nuevo.GetStudent2(Nick);
+            Name = lista[0];
+            Surname1 = lista[1];
+            Surname2 = lista[2];
+        }
+
         public Student(List<object> param)
         {
             _name = param[0].ToString();
@@ -65,6 +77,7 @@ namespace SZ
         public string Name { get => _name; set => _name = value; }
         public string Surname1 { get => _surname1; set => _surname1 = value; }
         public string Surname2 { get => _surname2; set => _surname2 = value; }
+        public string Nick { get => nick; set => nick = value; }
         public DateTime Birth { get => _birth; set => _birth = value; }
         public string Nationality { get => _nationality; set => _nationality = value; }
         public string Country { get => _country; set => _country = value; }

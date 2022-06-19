@@ -1540,19 +1540,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\alexv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
+      "projectUniqueName": "C:\\ProyectoFCT\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
       "projectName": "SZ",
-      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\obj\\",
+      "projectPath": "C:\\ProyectoFCT\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
+      "packagesPath": "C:\\Users\\alexv\\.nuget\\packages\\",
+      "outputPath": "C:\\ProyectoFCT\\ProyectoFCT\\ProyectoFCT\\SZ\\SZ\\SZ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alexv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1617,7 +1617,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   },

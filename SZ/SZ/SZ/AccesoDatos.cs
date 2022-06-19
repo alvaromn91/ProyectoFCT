@@ -12,10 +12,10 @@ namespace SZ
 {
     public class AccesoDatos
     {
-        //string connectionString = "datasource=localhost;port=3306;username=Jaime;password=1234;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=Alex;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=localhost;port=3306;username=oscar;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=172.16.51.7;port=3306;username=alvaro;password=1234;database=schoolerzz;";
-        string connectionString = "datasource=localhost;port=3306;username=alvaro;password=12345678Aa;database=schoolerzz;";
+        //string connectionString = "datasource=localhost;port=3306;username=alvaro;password=12345678Aa;database=schoolerzz;";
 
         MySqlConnection databaseConnection;
 
@@ -80,8 +80,77 @@ namespace SZ
             lista.Add((string)cmd.Parameters["pv_sn2"].Value.ToString());
             CerrarConexion();
             return lista;
-
         }
+
+        public List<string> GetParent(string parent)
+        {
+            List<string> lista = new List<string>();
+            MySqlCommand cmd = new MySqlCommand("pa_GetParent", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_Nick", parent));
+            cmd.Parameters.Add(new MySqlParameter("pv_name", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn1", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn2", MySqlDbType.VarChar));
+            cmd.Parameters["pv_name"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn1"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn2"].Direction = ParameterDirection.Output;
+
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            lista.Add(cmd.Parameters["pv_name"].Value.ToString());
+            lista.Add(cmd.Parameters["pv_sn1"].Value.ToString());
+            lista.Add((string)cmd.Parameters["pv_sn2"].Value.ToString());
+            CerrarConexion();
+            return lista;
+        }
+
+        public List<string> GetTeacher(string parent)
+        {
+            List<string> lista = new List<string>();
+            MySqlCommand cmd = new MySqlCommand("pa_GetTeacher", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_Nick", parent));
+            cmd.Parameters.Add(new MySqlParameter("pv_name", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn1", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn2", MySqlDbType.VarChar));
+            cmd.Parameters["pv_name"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn1"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn2"].Direction = ParameterDirection.Output;
+
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            lista.Add(cmd.Parameters["pv_name"].Value.ToString());
+            lista.Add(cmd.Parameters["pv_sn1"].Value.ToString());
+            lista.Add((string)cmd.Parameters["pv_sn2"].Value.ToString());
+            CerrarConexion();
+            return lista;
+        }
+
+        public List<string> GetStudent2(string parent)
+        {
+            List<string> lista = new List<string>();
+            MySqlCommand cmd = new MySqlCommand("pa_GetStudent2", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_Nick", parent));
+            cmd.Parameters.Add(new MySqlParameter("pv_name", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn1", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn2", MySqlDbType.VarChar));
+            cmd.Parameters["pv_name"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn1"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn2"].Direction = ParameterDirection.Output;
+
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            lista.Add(cmd.Parameters["pv_name"].Value.ToString());
+            lista.Add(cmd.Parameters["pv_sn1"].Value.ToString());
+            lista.Add((string)cmd.Parameters["pv_sn2"].Value.ToString());
+            CerrarConexion();
+            return lista;
+        }
+
         public int annadir_estudiante(string colegio, string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string password, string medical, string observations, string photoRoute)
         {
             MySqlCommand cmd = new MySqlCommand("pa_anadir_estudiante", databaseConnection);

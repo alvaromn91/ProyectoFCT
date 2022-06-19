@@ -337,3 +337,90 @@ PA: begin
     into pv_sn2;
 end//
 DELIMITER ;
+
+DELIMITER //
+drop procedure if exists pa_GetParent;
+create procedure pa_GetParent(in pv_Nick varchar(12),
+							   out pv_name varchar(50),
+							   out pv_sn1 varchar(100),
+							   out pv_sn2 varchar(100))
+PA: begin
+    declare Existe varchar(12);
+    set Existe = NULL;
+	
+	select NICK from tutores where NICK = Lower(pv_Nick)
+    into Existe;
+    
+	if Existe is null
+    then
+        leave PA;
+	end if;
+    
+    select NOMBRE from tutores where NICK = Lower(pv_Nick)
+    into pv_name;
+    
+    select APELLIDO_1 from tutores where NICK = Lower(pv_Nick)
+    into pv_sn1;
+    
+    select APELLIDO_2 from tutores where NICK = Lower(pv_Nick)
+    into pv_sn2;
+end//
+DELIMITER ;
+
+DELIMITER //
+drop procedure if exists pa_GetTeacher;
+create procedure pa_GetTeacher(in pv_Nick varchar(12),
+							   out pv_name varchar(50),
+							   out pv_sn1 varchar(100),
+							   out pv_sn2 varchar(100))
+PA: begin
+    declare Existe varchar(12);
+    set Existe = NULL;
+	
+	select NICK from docentes where NICK = Lower(pv_Nick)
+    into Existe;
+    
+	if Existe is null
+    then
+        leave PA;
+	end if;
+    
+    select NOMBRE from docentes where NICK = Lower(pv_Nick)
+    into pv_name;
+    
+    select APELLIDO_1 from docentes where NICK = Lower(pv_Nick)
+    into pv_sn1;
+    
+    select APELLIDO_2 from docentes where NICK = Lower(pv_Nick)
+    into pv_sn2;
+end//
+DELIMITER ;
+
+DELIMITER //
+drop procedure if exists pa_GetStudent2;
+create procedure pa_GetStudent2(in pv_Nick varchar(12),
+							   out pv_name varchar(50),
+							   out pv_sn1 varchar(100),
+							   out pv_sn2 varchar(100))
+PA: begin
+    declare Existe varchar(12);
+    set Existe = NULL;
+	
+	select NICK from estudiantes where NICK = Lower(pv_Nick)
+    into Existe;
+    
+	if Existe is null
+    then
+        leave PA;
+	end if;
+    
+    select NOMBRE from estudiantes where NICK = Lower(pv_Nick)
+    into pv_name;
+    
+    select APELLIDO_1 from estudiantes where NICK = Lower(pv_Nick)
+    into pv_sn1;
+    
+    select APELLIDO_2 from estudiantes where NICK = Lower(pv_Nick)
+    into pv_sn2;
+end//
+DELIMITER ;
