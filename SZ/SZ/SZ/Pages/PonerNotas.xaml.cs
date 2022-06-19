@@ -23,12 +23,22 @@ namespace SZ.Pages
     public partial class PonerNotas : Page
     {
         List<AcademicoEstudiante> listaNotas = new List<AcademicoEstudiante>();
+        string nick;
         public PonerNotas()
         {
             InitializeComponent();
-            listaNotas = rellenarLista("TJOY-JUROCAT");
+            nick = "TJOY-JUROCAT"; // App.nick;
+            listaNotas = rellenarLista(nick);
             grdNotas.ItemsSource = listaNotas;
-
+            if (nick.StartsWith("T"))
+            {
+                grdNotas.IsEnabled = true;
+            }
+            else
+            {
+                grdNotas.IsEnabled = false;
+            }
+            
         }
         private List<AcademicoEstudiante> rellenarLista(string nick)
         {
