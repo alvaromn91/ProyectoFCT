@@ -303,13 +303,93 @@ namespace SZ
 
             EstablecerConexion();
 
-            MySqlDataReader rdr = cmd.ExecuteReader(); // FALLAAAAAAAAAAAAA
+            MySqlDataReader rdr = cmd.ExecuteReader(); 
             if (rdr.Read()) {
                 string nick = rdr.GetValue(0).ToString();
             
                 rdr.Close();
                 CerrarConexion();
                 return nick;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string getNickEstu(String nick)
+        {
+            string sql = @"SELECT 
+                                d.NICK 
+                           FROM 
+                                estudiantes e 
+                                
+                                join grupos_estudiantes ge 
+                                on ge.id_estudiante = e.id 
+                                
+                                join grupos g
+                                on g.id = ge.id_grupo
+                                
+                                join docentes d
+                                on d.id = g.id_docente
+
+                           WHERE e.nick = @nick limit 1";
+            MySqlCommand cmd = new MySqlCommand(sql, databaseConnection);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new MySqlParameter("@nick", nick));
+
+            EstablecerConexion();
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                string doc_nick = rdr.GetValue(0).ToString();
+
+                rdr.Close();
+                CerrarConexion();
+                return doc_nick;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public string getNickParent(String nick)
+        {
+            string sql = @"SELECT 
+                                d.NICK 
+                           FROM  tutores t
+
+                                join tutores_estudiantes te
+                                on t.id = te.id_tutor
+
+                                join estudiantes e
+                                on e.id = te.id_estudiante
+                                
+                                join grupos_estudiantes ge 
+                                on ge.id_estudiante = e.id 
+                                
+                                join grupos g
+                                on g.id = ge.id_grupo
+                                
+                                join docentes d
+                                on d.id = g.id_docente
+
+                           WHERE t.nick = @nick limit 1";
+            MySqlCommand cmd = new MySqlCommand(sql, databaseConnection);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new MySqlParameter("@nick", nick));
+
+            EstablecerConexion();
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                string doc_nick = rdr.GetValue(0).ToString();
+
+                rdr.Close();
+                CerrarConexion();
+                return doc_nick;
             }
             else
             {

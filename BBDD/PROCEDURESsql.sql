@@ -98,20 +98,17 @@ INSERT INTO ESTUDIANTES (NOMBRE,
                         DELETED, 
                         F_BORRADO
                         )
-                        VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email,pv_contrasena, 0, NULL);
+                        VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email, md5(pv_contrasena), 0, NULL);
 SET pi_r = 1;
 set vb_id = (SELECT ID FROM ESTUDIANTES WHERE NOMBRE like pv_nombre and APELLIDO_1 LIKE pv_apellido1 and APELLIDO_2 LIKE pv_apellido2);
 CALL PA_CREAR_NICK('S', pt_colegio, vb_id, @TEMP);
 SET pi_r = 2;
 SET vv_nick = (SELECT @TEMP);
 SET @TEMP = '';
-CALL PA_GENERAR_CONTRASENA(@TEMP);
-set vv_contrasena = (SELECT @TEMP);
-SET pi_r = 3;
+
 UPDATE ESTUDIANTES SET NICK = vv_nick WHERE ID = vb_id;
 SET pi_r = 4;
-UPDATE ESTUDIANTES SET CONTRASENA = vv_contrasena WHERE ID = vb_id;
-SET pi_r = 5;
+
 if pt_datMedico not like '' or pt_datMedico is not null then
     update ESTUDIANTES set DATOS_MEDICOS = pt_datMedico where ID = vb_id;
     SET pi_r = 6;

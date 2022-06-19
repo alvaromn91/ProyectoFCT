@@ -40,7 +40,7 @@ namespace SZ.Pages
             string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
             int longitud = caracteres.Length;
             char letra;
-            int longitudContrasenia = 10;
+            int longitudContrasenia = 8;
             for (int i = 0; i < longitudContrasenia; i++)
             {
                 letra = caracteres[rdn.Next(longitud)];
@@ -103,18 +103,13 @@ namespace SZ.Pages
                 req_ema.Foreground = Brushes.Red;
                 vacio = true;
             }
-            //if (tb_Password.Password.ToString() == string.Empty)
-            //{
-            //    req_pas.Visibility = Visibility.Visible;
-            //    req_pas.Foreground = Brushes.Red;
-            //    vacio = true;
-            //}
-            //if (cal_Birth.DisplayDate.Date == DateTime.Today.Date)
-            //{
-            //    req_cal.Visibility = Visibility.Visible;
-            //    req_cal.Foreground = Brushes.Red;
-            //    vacio = true;
-            //}
+            
+            if (cal_Birth.DisplayDate.Date == DateTime.Today.Date)
+            {
+                req_cal.Visibility = Visibility.Visible;
+                req_cal.Foreground = Brushes.Red;
+                vacio = true;
+            }
 
             if (!vacio)
             {
@@ -137,7 +132,7 @@ namespace SZ.Pages
                 msg.From = new MailAddress("schoolerzz@outlook.com");
                 msg.To.Add(tb_Email.Text);//Correo destino
                 msg.Subject = "Datos de acceso a Schoolerzz";
-                msg.Body = "Bienvenido a Schoolerzz.\nAqui le dejamos su usuario y contraseña.\nUsuario: "+new AccesoDatos().getNick(student.Email) + "\nContraseña: " + contra;
+                msg.Body = "Bienvenido a Schoolerzz.\nAqui le dejamos su usuario y contraseña.\nUsuario: "+ new AccesoDatos().getNick(student.Email).Substring(1, 11) + "\nContraseña: " + student.Password;
                 //msg.Priority = MailPriority.High;
 
 

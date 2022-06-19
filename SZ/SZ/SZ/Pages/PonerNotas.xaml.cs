@@ -27,15 +27,24 @@ namespace SZ.Pages
         public PonerNotas()
         {
             InitializeComponent();
-            nick = "TJOY-JUROCAT"; // App.nick;
-            listaNotas = rellenarLista(nick);
-            grdNotas.ItemsSource = listaNotas;
+            nick = App.nick;
+            
             if (nick.StartsWith("T"))
             {
+                listaNotas = rellenarLista(nick);
+                grdNotas.ItemsSource = listaNotas;
                 grdNotas.IsEnabled = true;
             }
-            else
+            else if (nick.StartsWith("S"))
             {
+                listaNotas = rellenarLista(new AccesoDatos().getNickEstu(nick).ToString());
+                grdNotas.ItemsSource = listaNotas;
+                grdNotas.IsEnabled = false;
+            }
+            else if (nick.StartsWith("P"))
+            {
+                listaNotas = rellenarLista(new AccesoDatos().getNickParent(nick).ToString());
+                grdNotas.ItemsSource = listaNotas;
                 grdNotas.IsEnabled = false;
             }
             

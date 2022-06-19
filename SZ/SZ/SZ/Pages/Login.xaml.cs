@@ -96,7 +96,6 @@ namespace SZ.Pages
                             bind = rol + tb_User.Text.ToString();
                             App.nick = bind;
                             App.Parent.DataContext = new Parent(bind);
-                            App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
                             App.Parent.parent.Navigate(new MainMenu());
 
                             App.Parent.title.Visibility = Visibility.Collapsed;
@@ -112,7 +111,6 @@ namespace SZ.Pages
                             bind = rol + tb_User.Text.ToString();
                             App.nick = bind;
                             App.Parent.DataContext = new Teacher(bind);
-                            App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
                             App.Parent.parent.Navigate(new MainMenu());
 
                             App.Parent.title.Visibility = Visibility.Collapsed;
@@ -128,7 +126,6 @@ namespace SZ.Pages
                             bind = rol + tb_User.Text.ToString();
                             App.nick = bind;
                             App.Parent.DataContext = new Student(bind);
-                            App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
                             App.Parent.parent.Navigate(new MainMenu());
 
                             App.Parent.title.Visibility = Visibility.Collapsed;

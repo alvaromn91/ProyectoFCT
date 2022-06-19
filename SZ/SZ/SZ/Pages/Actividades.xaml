@@ -1,0 +1,76 @@
+﻿<Page x:Class="SZ.Pages.Actividades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SZ.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:fa="http://schemas.fontawesome.io/icons/"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Actividades">
+
+    <Grid Background="#7FE8C56A">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="ParentContainer" Grid.Row="1" Grid.Column="1" Orientation="Vertical" >
+            <StackPanel x:Name="ActivitiesRow1" Orientation="Horizontal" Height="{Binding Path=RowHeight}">
+                <StackPanel x:Name="RowOneItemOne" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}" >
+                    <Button x:Name="ImageGame1" Height="{Binding Path=ImageButton}" Click="DisplayGame1" ></Button>
+                    <Button x:Name="ActionGame1" Height="{Binding Path=ActionButton}" Click="LaunchGame1" Visibility="Hidden" ></Button>
+                </StackPanel>
+                <StackPanel x:Name="RowOneItemTwo" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}" >
+                    <Button x:Name="ImageGame2" Height="{Binding Path=ImageButton}" Click="DisplayGame2" ></Button>
+                    <Button x:Name="ActionGame2" Height="{Binding Path=ActionButton}" Click="LaunchGame2" Visibility="Hidden" ></Button>
+                </StackPanel>
+                <StackPanel x:Name="RowOneItemThree" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}">
+                    <Button x:Name="ImageGame3" Height="{Binding Path=ImageButton}" Click="DisplayGame3" ></Button>
+                    <Button x:Name="ActionGame3" Height="{Binding Path=ActionButton}" Click="LaunchGame3" Visibility="Hidden" ></Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="ActivitiesRow2" Orientation="Horizontal" Height="{Binding Path=RowHeight}">
+                <StackPanel x:Name="RowTwoItemOne" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}">
+                    <Button x:Name="ImageGame4" Height="{Binding Path=ImageButton}" Click="DisplayGame4" ></Button>
+                    <Button x:Name="ActionGame4" Height="{Binding Path=ActionButton}" Click="LaunchGame4" Visibility="Hidden" ></Button>
+                </StackPanel>
+                <StackPanel x:Name="RowTwoItemTwo" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}">
+                    <Button Height="{Binding Path=ImageButton}"  ></Button>
+                    <Button Height="{Binding Path=ActionButton}"  Visibility="Hidden" ></Button>
+                </StackPanel>
+                <StackPanel x:Name="RowTwoItemThree" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}">
+                    <Button  Height="{Binding Path=ImageButton}"  ></Button>
+                    <Button Height="{Binding Path=ActionButton}" Visibility="Hidden" ></Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="ActivitiesRow3" Orientation="Horizontal" Height="{Binding Path=RowHeight}">
+                <StackPanel x:Name="RowThreeItemOne" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}">
+                    <Button Height="{Binding Path=ImageButton}"></Button>
+                    <Button Height="{Binding Path=ActionButton}" Visibility="Hidden"></Button>
+                </StackPanel>
+                <StackPanel x:Name="RowThreeItemTwo" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}">
+                    <Button Height="{Binding Path=ImageButton}"></Button>
+                    <Button Height="{Binding Path=ActionButton}" Visibility="Hidden"></Button>
+                </StackPanel>
+                <StackPanel x:Name="RowThreeItemThree" Width="{Binding Path=ItemWidth}" Height="{Binding Path=RowHeight}">
+                    <Button Height="{Binding Path=ImageButton}"></Button>
+                    <Button Height="{Binding Path=ActionButton}" Visibility="Hidden"></Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Page>

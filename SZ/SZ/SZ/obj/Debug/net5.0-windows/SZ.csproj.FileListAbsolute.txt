@@ -766,3 +766,6 @@ C:\ProyectoFCT\ProyectoFCT\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\SZ.dll
 C:\ProyectoFCT\ProyectoFCT\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\ref\SZ.dll
 C:\ProyectoFCT\ProyectoFCT\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\SZ.pdb
 C:\ProyectoFCT\ProyectoFCT\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\SZ.genruntimeconfig.cache
+C:\Users\Usuario\OneDrive\Escritorio\ProyectoFCT\SZ\SZ\SZ\bin\Debug\net5.0-windows\SZ.dll.config
+C:\Users\Usuario\OneDrive\Escritorio\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\Actividades.g.cs
+C:\Users\Usuario\OneDrive\Escritorio\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\Actividades.baml

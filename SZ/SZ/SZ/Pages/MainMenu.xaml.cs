@@ -23,6 +23,36 @@ namespace SZ.Pages
         public MainMenu()
         {
             InitializeComponent();
+            switch (App.nick.Substring(0, 1))
+            {
+                case "T":
+                    btn_S_Buscar.Visibility = Visibility.Visible;
+                    btn_S_Notas.Visibility = Visibility.Visible;
+                    st_par.Visibility = Visibility.Hidden;
+                    st_sch.Visibility = Visibility.Hidden;
+                    st_doc.Visibility = Visibility.Hidden;
+                    break;
+                case "S":
+                    st_par.Visibility = Visibility.Hidden;
+                    st_sch.Visibility = Visibility.Hidden;
+                    st_doc.Visibility = Visibility.Hidden;
+                    btn_S_Notas.Visibility = Visibility.Visible;
+                    btn_S_Actividades.Visibility = Visibility.Visible;
+                    break;
+                case "P":
+                    st_par.Visibility = Visibility.Hidden;
+                    st_sch.Visibility = Visibility.Hidden;
+                    st_doc.Visibility = Visibility.Hidden;
+                    btn_S_Notas.Visibility = Visibility.Visible;
+                    break;
+                case "M":
+                    btn_S_Notas.Visibility = Visibility.Hidden;
+                    btn_S_Add.Visibility = Visibility.Visible;
+                    btn_S_Buscar.Visibility = Visibility.Visible;
+                    btn_S_Delete.Visibility = Visibility.Visible;
+                    btn_S_Modify.Visibility = Visibility.Visible;                    
+                    break;
+            }            
         }
 
         private void btn_Student_Click(object sender, RoutedEventArgs e)
@@ -98,6 +128,16 @@ namespace SZ.Pages
         private void btn_S_Delete_Click(object sender, RoutedEventArgs e)
         {
             App.Parent.parent.NavigationService.Navigate(new DeleteStudent());
+        }
+
+        private void btn_S_Notas_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new PonerNotas());
+        }
+
+        private void btn_S_Actividades_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new Actividades());
         }
     }
 }

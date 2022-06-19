@@ -65,10 +65,7 @@
                 <TextBox x:Name="tb_Email" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Email" FontFamily="Bernard MT Condensed" Margin="30"/>
                 <TextBlock Text="*" Name="req_ema" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
-                <PasswordBox x:Name="tb_Password" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Contraseña" Cursor="IBeam" FontFamily="Bernard MT Condensed" Margin="30"/>
-                <TextBlock Text="*" Name="req_pas" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
-            </StackPanel>
+            
             <TextBox x:Name="tb_Medical" FontSize="24" Width="280" materialDesign:HintAssist.Hint="Observaciones Médicas" FontFamily="Bernard MT Condensed" Margin="30" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
             <TextBox x:Name="tb_Observations" FontSize="24" Width="280" materialDesign:HintAssist.Hint="Observaciones" FontFamily="Bernard MT Condensed" Margin="30" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
         </WrapPanel>

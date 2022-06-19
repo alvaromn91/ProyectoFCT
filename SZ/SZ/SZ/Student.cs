@@ -93,12 +93,6 @@ namespace SZ
         public string Doc_nick { get => _doc_nick; set => _doc_nick = value; }
 
 
-
-        //public int AddStudent(string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string medical, string observations, string photoRoute)
-        //{
-        //    
-        //}
-
     }
     
 
