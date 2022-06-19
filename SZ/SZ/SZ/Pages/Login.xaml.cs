@@ -69,26 +69,80 @@ namespace SZ.Pages
                     req2.Foreground = Brushes.Red;
                 }
                 AccesoDatos con = new AccesoDatos();
-                //int r = con.Login(rol, tb_User.Text.ToString(), tb_Pass.Password.ToString());
-                int r = 0;
-                if (r == 0)
+                int r = con.Login(rol, tb_User.Text.ToString(), tb_Pass.Password.ToString());
+                if (r == 1)
                 {
-                    tb_wrong_pass.Visibility = Visibility.Collapsed;
-                    bind = rol + tb_User.Text.ToString();
-                    App.nick = bind;
-                    App.Parent.DataContext = new SchoolManager(bind);
-                    App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
-                    App.Parent.parent.Navigate(new MainMenu());
-                    
-                    //App.Parent.parent.Navigate(new GetStudent());
+                    switch (rol)
+                    {
+                        case 'M':
 
-                    App.Parent.title.Visibility = Visibility.Collapsed;
-                    App.Parent.title2.Visibility = Visibility.Visible;
-                    App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
-                    App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
-                    App.Parent.stp_AU.Visibility = Visibility.Visible;
-                    App.nick = bind;
-                    
+                            tb_wrong_pass.Visibility = Visibility.Collapsed;
+                            bind = rol + tb_User.Text.ToString();
+                            App.nick = bind;
+                            App.Parent.DataContext = new SchoolManager(bind);
+                            App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
+                            App.Parent.parent.Navigate(new MainMenu());
+
+                            App.Parent.title.Visibility = Visibility.Collapsed;
+                            App.Parent.title2.Visibility = Visibility.Visible;
+                            App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
+                            App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
+                            App.Parent.stp_AU.Visibility = Visibility.Visible;
+
+                            break;
+                        case 'P':
+                            tb_wrong_pass.Visibility = Visibility.Collapsed;
+                            bind = rol + tb_User.Text.ToString();
+                            App.nick = bind;
+                            App.Parent.DataContext = new SchoolManager(bind);
+                            App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
+                            App.Parent.parent.Navigate(new MainMenu());
+
+                            App.Parent.title.Visibility = Visibility.Collapsed;
+                            App.Parent.title2.Visibility = Visibility.Visible;
+                            App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
+                            App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
+                            App.Parent.stp_AU.Visibility = Visibility.Visible;
+
+                            break;
+                        case 'S':
+
+                            tb_wrong_pass.Visibility = Visibility.Collapsed;
+                            bind = rol + tb_User.Text.ToString();
+                            App.nick = bind;
+                            App.Parent.DataContext = new SchoolManager(bind);
+                            App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
+                            App.Parent.parent.Navigate(new MainMenu());
+
+                            App.Parent.title.Visibility = Visibility.Collapsed;
+                            App.Parent.title2.Visibility = Visibility.Visible;
+                            App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
+                            App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
+                            App.Parent.stp_AU.Visibility = Visibility.Visible;
+
+                            break;
+                        case 'T':
+
+                            tb_wrong_pass.Visibility = Visibility.Collapsed;
+                            bind = rol + tb_User.Text.ToString();
+                            App.nick = bind;
+                            App.Parent.DataContext = new SchoolManager(bind);
+                            App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
+                            App.Parent.parent.Navigate(new MainMenu());
+
+                            App.Parent.title.Visibility = Visibility.Collapsed;
+                            App.Parent.title2.Visibility = Visibility.Visible;
+                            App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
+                            App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
+                            App.Parent.stp_AU.Visibility = Visibility.Visible;
+
+                            break;
+                        default:
+
+                            tb_wrong_pass.Visibility = Visibility.Visible;
+
+                            break;
+                    }
                 }
                 else
                 {

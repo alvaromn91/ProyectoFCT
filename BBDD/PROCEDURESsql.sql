@@ -308,3 +308,32 @@ if TELEFONO_2 not like '' OR TELEFONO_2 IS NOT NULL then
 end if;
 END
 // DELIMITER ;
+
+DELIMITER //
+drop procedure if exists pa_GetManager;
+create procedure pa_GetManager(in pv_Nick varchar(12),
+							   out pv_name varchar(50),
+							   out pv_sn1 varchar(100),
+							   out pv_sn2 varchar(100))
+PA: begin
+    declare Existe varchar(12);
+    set Existe = NULL;
+	
+	select NICK from manager_colegio where NICK = Lower(pv_Nick)
+    into Existe;
+    
+	if Existe is null
+    then
+        leave PA;
+	end if;
+    
+    select NOMBRE from manager_colegio where NICK = Lower(pv_Nick)
+    into pv_name;
+    
+    select APELLIDO_1 from manager_colegio where NICK = Lower(pv_Nick)
+    into pv_sn1;
+    
+    select APELLIDO_2 from manager_colegio where NICK = Lower(pv_Nick)
+    into pv_sn2;
+end//
+DELIMITER ;

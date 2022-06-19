@@ -33,41 +33,17 @@ namespace SZ.Pages
         private List<AcademicoEstudiante> rellenarLista(string nick)
         {
             List<AcademicoEstudiante> listaEstu = new List<AcademicoEstudiante>();
-            List<SqlParameter> param = new List<SqlParameter>();
-            param.Add(new SqlParameter("@doc_nick", nick));
-
-            using (DbContext context = new DbContext("datasource=localhost;port=3306;username=alvaro;password=12345678Aa;database=schoolerzz;"))
+            List<object> listaObjetos = new List<object>();
+            int cont = 0;
+            foreach (var a in new AccesoDatos().NotasEstu(nick))
             {
-                var lista = context.Database.SqlQuery<AcademicoEstudiante>("SELECT NOMBRE, " +
-                                                                                    "APELLIDO_1, " +
-                                                                                    "APELLIDO_2, " +
-                                                                                    "NOTAS_TRIM_1, " +
-                                                                                    "NOTAS_TRIM_2, " +
-                                                                                    "NOTAS_TRIM_3, " +
-                                                                                    "NOTAS_FINAL," +
-                                                                                    "FALTAS_1," +
-                                                                                    "FALTAS_2," +
-                                                                                    "FALTAS_3," +
-                                                                                    "FALTAS_FINAL," +
-                                                                                    "JUSTIFICADAS_1," +
-                                                                                    "JUSTIFICADAS_2," +
-                                                                                    "JUSTIFICADAS_3," +
-                                                                                    "JUSTIFICADAS_FINAL," +
-                                                                                    "RETRASOS_1," +
-                                                                                    "RETRASOS_2," +
-                                                                                    "RETRASOS_3," +
-                                                                                    "RETRASOS_FINAL," +
-                                                                                    "CICLO," +
-                                                                                    "CURSO," +
-                                                                                    "CLASE," +
-                                                                                    "DOC_NICK" +
-                                                                                    "FROM vw_Notas_Alumnos" +
-                                                                                    "WHERE '" +
-                                                                                    "@doc_nick",
-                                                                                    param.ToArray()).AsEnumerable<AcademicoEstudiante>();          
-                foreach (AcademicoEstudiante a in lista)
+                listaObjetos.Add(a);
+                cont++;
+                if (cont == 23)
                 {
-                    listaEstu.Add(a);
+                    listaEstu.Add(new AcademicoEstudiante(listaObjetos));
+                    listaObjetos = new List<object>();
+                    cont = 0;
                 }
             }
             return listaEstu;

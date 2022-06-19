@@ -12,9 +12,10 @@ namespace SZ
 {
     public class AccesoDatos
     {
-        string connectionString = "datasource=localhost;port=3306;username=Jaime;password=1234;database=schoolerzz;";
+        //string connectionString = "datasource=localhost;port=3306;username=Jaime;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=localhost;port=3306;username=oscar;password=1234;database=schoolerzz;";
-        //string connectionString = "datasource=172.16.51.7;port=3306;username=root;password=1234;database=schoolerzz;";
+        //string connectionString = "datasource=172.16.51.7;port=3306;username=alvaro;password=1234;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=alvaro;password=12345678Aa;database=schoolerzz;";
 
         MySqlConnection databaseConnection;
 
@@ -40,21 +41,19 @@ namespace SZ
 
         public int Login(char pc_Char, string pv_Nick, string pv_Password)
         {
-
-            MySqlCommand cmd = new MySqlCommand("pa_LoginAJ", databaseConnection);
+            string pv_Username = pc_Char + pv_Nick;
+            MySqlCommand cmd = new MySqlCommand("pa_login", databaseConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new MySqlParameter("pc_char", pc_Char));
-            cmd.Parameters.Add(new MySqlParameter("pv_username", pv_Nick));
+            //cmd.Parameters.Add(new MySqlParameter("pc_char", pc_Char));
+            cmd.Parameters.Add(new MySqlParameter("pv_username", pv_Username));
             cmd.Parameters.Add(new MySqlParameter("pv_password", pv_Password));
-
-
-            cmd.Parameters.Add(new MySqlParameter("pi_valid", MySqlDbType.Int32));
-            cmd.Parameters["pi_valid"].Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(new MySqlParameter("pv_success", MySqlDbType.Int32));
+            cmd.Parameters["pv_success"].Direction = ParameterDirection.Output;
 
             EstablecerConexion();
 
             cmd.ExecuteNonQuery();
-            int s = (int)cmd.Parameters["pi_valid"].Value;
+            int s = (int)cmd.Parameters["pv_success"].Value;
 
             CerrarConexion();
 
@@ -157,6 +156,32 @@ namespace SZ
             rdr.Close();
             CerrarConexion();
             
+            return lista;
+        }
+        public List<object> NotasEstu (string nick)
+        {
+            List<object> lista = new List<object>();
+            string sql = @"SELECT * FROM vw_notas_alumnos WHERE doc_nick = @nick";
+
+            MySqlCommand cmd = new MySqlCommand(sql, databaseConnection);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new MySqlParameter("@nick", nick));
+
+            EstablecerConexion();
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                for (int i = 0; i < rdr.FieldCount; i++)
+                {
+                    var result = rdr.GetValue(i);
+                    lista.Add(result);
+                }
+            }
+            rdr.Close();
+            CerrarConexion();
+
             return lista;
         }
 

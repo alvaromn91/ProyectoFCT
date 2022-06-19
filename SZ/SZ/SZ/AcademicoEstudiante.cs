@@ -32,31 +32,33 @@ namespace SZ
         private string _ciclo;
         private int _curso;
         private string _clase;
+        private string _doc_nick;
 
-        public AcademicoEstudiante(string nombre, string apellido1, string apellido2, int notasTrim1, int notasTrim2, int notasTrim3, int notasFinal, int faltas1, int faltas2, int faltas3, int faltasFinal, int justificadas1, int justificadas2, int justificadas3, int justificadasFinal, int retrasos1, int retrasos2, int retrasos3, int retrasosFinal, string ciclo, int curso, string clase)
+        public AcademicoEstudiante(List<object>param)
         {
-            _nombre = nombre;
-            _apellido1 = apellido1;
-            _apellido2 = apellido2;
-            _notasTrim1 = notasTrim1;
-            _notasTrim2 = notasTrim2;
-            _notasTrim3 = notasTrim3;
-            _notasFinal = notasFinal;
-            _faltas1 = faltas1;
-            _faltas2 = faltas2;
-            _faltas3 = faltas3;
-            _faltasFinal = faltasFinal;
-            _justificadas1 = justificadas1;
-            _justificadas2 = justificadas2;
-            _justificadas3 = justificadas3;
-            _justificadasFinal = justificadasFinal;
-            _retrasos1 = retrasos1;
-            _retrasos2 = retrasos2;
-            _retrasos3 = retrasos3;
-            _retrasosFinal = retrasosFinal;
-            _ciclo = ciclo;
-            _curso = curso;
-            _clase = clase;
+            _nombre = param[0].ToString();
+            _apellido1 = param[1].ToString();
+            _apellido2 = param[2].ToString();
+            _notasTrim1 = int.Parse(param[3].ToString());
+            _notasTrim2 = int.Parse(param[4].ToString());
+            _notasTrim3 = int.Parse(param[5].ToString());
+            _notasFinal = int.Parse(param[6].ToString());
+            _faltas1 = int.Parse(param[7].ToString());
+            _faltas2 = int.Parse(param[8].ToString());
+            _faltas3 = int.Parse(param[9].ToString());
+            _faltasFinal = int.Parse(param[10].ToString());
+            _justificadas1 = int.Parse(param[11].ToString());
+            _justificadas2 = int.Parse(param[12].ToString());
+            _justificadas3 = int.Parse(param[13].ToString());
+            _justificadasFinal = int.Parse(param[14].ToString());
+            _retrasos1 = int.Parse(param[15].ToString());
+            _retrasos2 = int.Parse(param[16].ToString());
+            _retrasos3 = int.Parse(param[17].ToString());
+            _retrasosFinal = int.Parse(param[18].ToString());
+            _ciclo = param[3].ToString();
+            _curso = int.Parse(param[20].ToString());
+            _clase = param[21].ToString();
+            _doc_nick = param[22].ToString();
         }
 
         public string Nombre { get => _nombre; set => _nombre = value; }
@@ -81,5 +83,6 @@ namespace SZ
         public string Ciclo { get => _ciclo; set => _ciclo = value; }
         public int Curso { get => _curso; set => _curso = value; }
         public string Clase { get => _clase; set => _clase = value; }
+        public string Doc_nick { get => _doc_nick; set => _doc_nick = value; }
     }
 }
