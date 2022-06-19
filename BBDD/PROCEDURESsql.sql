@@ -308,9 +308,9 @@ if TELEFONO_2 not like '' OR TELEFONO_2 IS NOT NULL then
 end if;
 END
 // DELIMITER ;
-
-DELIMITER //
 drop procedure if exists pa_GetManager;
+DELIMITER //
+
 create procedure pa_GetManager(in pv_Nick varchar(12),
 							   out pv_name varchar(50),
 							   out pv_sn1 varchar(100),
@@ -337,9 +337,9 @@ PA: begin
     into pv_sn2;
 end//
 DELIMITER ;
-
-DELIMITER //
 drop procedure if exists pa_GetParent;
+DELIMITER //
+
 create procedure pa_GetParent(in pv_Nick varchar(12),
 							   out pv_name varchar(50),
 							   out pv_sn1 varchar(100),
@@ -366,9 +366,9 @@ PA: begin
     into pv_sn2;
 end//
 DELIMITER ;
-
-DELIMITER //
 drop procedure if exists pa_GetTeacher;
+DELIMITER //
+
 create procedure pa_GetTeacher(in pv_Nick varchar(12),
 							   out pv_name varchar(50),
 							   out pv_sn1 varchar(100),
@@ -395,9 +395,9 @@ PA: begin
     into pv_sn2;
 end//
 DELIMITER ;
-
-DELIMITER //
 drop procedure if exists pa_GetStudent2;
+DELIMITER //
+
 create procedure pa_GetStudent2(in pv_Nick varchar(12),
 							   out pv_name varchar(50),
 							   out pv_sn1 varchar(100),

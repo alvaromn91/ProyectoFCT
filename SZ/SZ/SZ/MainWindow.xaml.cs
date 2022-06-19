@@ -29,7 +29,7 @@ namespace SZ
         {
             App.Parent = this;
             //this.parent.Navigate(login);
-            this.parent.Navigate(new Credits());
+            this.parent.Navigate(new Login());
         }
 
         private void btn_Search_S_Click(object sender, RoutedEventArgs e)
