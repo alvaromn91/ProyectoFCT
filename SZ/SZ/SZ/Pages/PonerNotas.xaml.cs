@@ -58,7 +58,28 @@ namespace SZ.Pages
             }
             return listaEstu;
         }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que quieres actualizar las notas?", "Actualizar", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                for (int i = 0; i < listaNotas.Count - 1; i++)
+                {
+                    new AccesoDatos().CambiarNotas(listaNotas[i]);
+                }
+                MessageBox.Show("Notas actualizadas");
+            }
+            else
+            {
+                MessageBox.Show("No se ha actualizado");
+            }
             
+        }
+
+        private void btn_atras_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new MainMenu());
+        }
     }
     
 }

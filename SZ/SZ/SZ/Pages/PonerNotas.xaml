@@ -17,7 +17,14 @@
       Title="PonerNotas">
 
     <Grid Background="#7FE8C56A">
-        <DataGrid x:Name="grdNotas" BorderBrush="#FFCC6649" Margin="23,162,23,10" Background="{x:Null}" BorderThickness="1,1,1,1" />
+        <Grid>
+          <DataGrid x:Name="grdNotas" BorderBrush="#FFCC6649" Margin="24,104,24,184" Background="{x:Null}" BorderThickness="1,1,1,1" />  
+        </Grid>
+        <Grid>
+            <Button x:Name="btn_atras" Click="btn_atras_Click" Visibility="Visible" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" FontFamily="Bernard MT" Cursor="Hand" Content="Atrás" Margin="68,400,562,18" Width="100"/>
+
+            <Button x:Name="btn_update" Click="btn_update_Click" Visibility="Visible" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" FontFamily="Bernard MT" Cursor="Hand" Content="Actualizar datos" Margin="554,400,76,18" Width="300"/>
+        </Grid>            
 
     </Grid>
 </Page>

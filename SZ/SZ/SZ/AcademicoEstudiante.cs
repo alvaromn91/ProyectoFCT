@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SZ
 {
-    class AcademicoEstudiante
+    public class AcademicoEstudiante
     {
         private string _nombre;
         private string _apellido1;

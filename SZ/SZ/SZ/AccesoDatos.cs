@@ -12,10 +12,10 @@ namespace SZ
 {
     public class AccesoDatos
     {
-        string connectionString = "datasource=localhost;port=3306;username=Alex;password=1234;database=schoolerzz;";
+        //string connectionString = "datasource=localhost;port=3306;username=Alex;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=localhost;port=3306;username=oscar;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=172.16.51.7;port=3306;username=alvaro;password=1234;database=schoolerzz;";
-        //string connectionString = "datasource=localhost;port=3306;username=alvaro;password=12345678Aa;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=alvaro;password=12345678Aa;database=schoolerzz;";
 
         MySqlConnection databaseConnection;
 
@@ -252,6 +252,47 @@ namespace SZ
             CerrarConexion();
 
             return lista;
+        }
+
+        public int CambiarNotas(AcademicoEstudiante nuevo)
+        {
+
+            MySqlCommand cmd = new MySqlCommand("PA_ACTUALIZAR_NOTAS", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("_NOMBRE", nuevo.Nombre)); 
+            cmd.Parameters.Add(new MySqlParameter("_APELLIDO1", nuevo.Apellido1));
+            cmd.Parameters.Add(new MySqlParameter("_APELLIDO2", nuevo.Apellido2));
+            cmd.Parameters.Add(new MySqlParameter("NT1", nuevo.NotasTrim1));
+            cmd.Parameters.Add(new MySqlParameter("NT2", nuevo.NotasTrim2));
+            cmd.Parameters.Add(new MySqlParameter("NT3", nuevo.NotasTrim3));
+            cmd.Parameters.Add(new MySqlParameter("NF", nuevo.NotasFinal));
+            cmd.Parameters.Add(new MySqlParameter("FT1", nuevo.Faltas1));
+            cmd.Parameters.Add(new MySqlParameter("FT2", nuevo.Faltas2));
+            cmd.Parameters.Add(new MySqlParameter("FT3", nuevo.Faltas3));
+            cmd.Parameters.Add(new MySqlParameter("FF", nuevo.FaltasFinal));
+            cmd.Parameters.Add(new MySqlParameter("JT1", nuevo.Justificadas1));
+            cmd.Parameters.Add(new MySqlParameter("JT2", nuevo.Justificadas2));
+            cmd.Parameters.Add(new MySqlParameter("JT3", nuevo.Justificadas3));
+            cmd.Parameters.Add(new MySqlParameter("JF", nuevo.JustificadasFinal));
+            cmd.Parameters.Add(new MySqlParameter("RT1", nuevo.Retrasos1));
+            cmd.Parameters.Add(new MySqlParameter("RT2", nuevo.Retrasos2));
+            cmd.Parameters.Add(new MySqlParameter("RT3", nuevo.Retrasos3));
+            cmd.Parameters.Add(new MySqlParameter("RF", nuevo.RetrasosFinal));
+            cmd.Parameters.Add(new MySqlParameter("_CICLO", nuevo.Ciclo));
+            cmd.Parameters.Add(new MySqlParameter("_CURSO", nuevo.Curso));
+            cmd.Parameters.Add(new MySqlParameter("_CLASE", nuevo.Clase));
+            cmd.Parameters.Add(new MySqlParameter("_DOC_NICK", nuevo.Doc_nick));
+
+            cmd.Parameters.Add(new MySqlParameter("res", MySqlDbType.Int32));
+            cmd.Parameters["res"].Direction = ParameterDirection.Output;
+
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            int s = (int)cmd.Parameters["res"].Value;
+
+            CerrarConexion();
+            return s;
         }
 
         public string getNick( String email) {

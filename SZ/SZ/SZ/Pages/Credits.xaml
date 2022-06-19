@@ -9,23 +9,26 @@
       Title="Credits">
 
     <Grid>
-        <StackPanel Margin="50" VerticalAlignment="Top">
+        <StackPanel Margin="50,50,262,0" VerticalAlignment="Top">
             <Label Style="{StaticResource Blink}" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FFCC6649">
                 Creado por
             </Label>
             <Label Style="{StaticResource Blink}" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FFCC6649">
-                Álvaro Martín
+                Álvaro Martín,
             </Label>
             <Label Style="{StaticResource Blink}" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FFCC6649">
-                y
+                Jaime Robledo,
             </Label>
             <Label Style="{StaticResource Blink}" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FFCC6649">
-                Jaime Robledo
+                Alejandro Velasco y
+            </Label>
+            <Label Style="{StaticResource Blink}" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FFCC6649">
+                Óscar Melgarejo
             </Label>
         </StackPanel>
-        <StackPanel VerticalAlignment="Bottom">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
             <Image Source="../images/mojo.png" Width="400"/>
         </StackPanel>
-        
+
     </Grid>
 </Page>

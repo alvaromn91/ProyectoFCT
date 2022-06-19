@@ -424,3 +424,74 @@ PA: begin
     into pv_sn2;
 end//
 DELIMITER ;
+
+DROP PROCEDURE IF EXISTS PA_ACTUALIZAR_NOTAS;
+DELIMITER //
+
+
+CREATE PROCEDURE PA_ACTUALIZAR_NOTAS(IN _NOMBRE VARCHAR(50),
+									 IN _APELLIDO1 VARCHAR(100),
+                                     IN _APELLIDO2 VARCHAR(100),
+                                     IN NT1 INT,
+                                     IN NT2 INT,
+                                     IN NT3 INT,
+                                     IN NF INT,
+                                     IN FT1 INT,
+                                     IN FT2 INT,
+                                     IN FT3 INT,
+                                     IN FF INT,
+                                     IN JT1 INT,
+                                     IN JT2 INT,
+                                     IN JT3 INT,
+                                     IN JF INT,
+                                     IN RT1 INT,
+                                     IN RT2 INT,
+                                     IN RT3 INT,
+                                     IN RF INT,
+                                     IN _CICLO VARCHAR(12),
+                                     IN _CURSO TINYINT,
+                                     IN _CLASE VARCHAR(10),
+                                     IN _DOC_NICK VARCHAR(12),
+                                     OUT RES INT)
+BEGIN
+	DECLARE V_ID INT;
+    SET V_ID = (SELECT 
+						GE.ID 
+				FROM 
+						ESTUDIANTES E 
+                        JOIN GRUPOS_ESTUDIANTES GE 
+                        ON E.ID = GE.ID_ESTUDIANTE 
+                        JOIN GRUPOS G 
+                        ON G.ID = GE.ID_GRUPO 
+                        JOIN DOCENTES D 
+                        ON D.ID = G.ID_DOCENTE 
+				WHERE 
+                        E.NOMBRE LIKE _NOMBRE 
+                        AND E.APELLIDO_1 LIKE _APELLIDO1 
+                        AND E.APELLIDO_2 LIKE _APELLIDO2 
+                        AND D.NICK LIKE _DOC_NICK  
+				LIMIT 1);
+   UPDATE 
+		GRUPOS_ESTUDIANTES 
+	SET 
+		NOTAS_TRIMESTRE_1 = NT1,
+        NOTAS_TRIMESTRE_2 = NT2,
+        NOTAS_TRIMESTRE_3 = NT3,
+        NOTAS_FINAL= NF,
+        FALTAS_ASISTENCIA_1 = FT1,
+        FALTAS_ASISTENCIA_2 = FT2,
+        FALTAS_ASISTENCIA_3 = FT3,
+        FALTAS_ASISTENCIA_FINAL = FF,
+        FALTAS_JUSTIFICADAS_1 = JT1,
+        FALTAS_JUSTIFICADAS_2 = JT2,
+        FALTAS_JUSTIFICADAS_3 = JT3,
+        FALTAS_JUSTIFICADAS_FINAL = JF,
+        RETRASOS_1 = RT1,
+        RETRASOS_2 = RT2,
+        RETRASOS_3 = RT3,
+        RETRASOS_FINAL = RF
+	WHERE
+		ID = V_ID;
+	SET RES = 1;
+	
+END // DELIMITER ;
