@@ -471,26 +471,47 @@ END
 // DELIMITER ;
 
 
-DELIMITER $$
- 
-CREATE PROCEDURE pa_login(IN pv_username VARCHAR(100), IN pv_password VARCHAR(50), OUT pv_success BOOLEAN)
+
+DELIMITER //
+drop procedure if exists pa_login;
+
+CREATE PROCEDURE pa_login(IN pv_username VARCHAR(100), 
+										IN pv_password VARCHAR(50), 
+                                        OUT pv_success BOOLEAN)
 BEGIN
-    DECLARE _t = LEFT(pv_username, 1);
-    IF _table = 'M' THEN
-        SET pv_success = (SELECT 1 FROM COLEGIO_MANAGER WHERE NICK = pv_username AND CONTRASENA = MD5(pv_password));
+    declare _table varchar(1);
+    set _table = LEFT(pv_username, 1);
+    IF _table like 'M' THEN
+        SET pv_success = (SELECT 1 FROM MANAGER_COLEGIO WHERE NICK LIKE pv_username AND CONTRASENA LIKE MD5(pv_password));
+        if (pv_success is null) then
+			set pv_success = 0;
+		end if;
     END IF;
-    IF _table = 'S' THEN
-        SET pv_success = (SELECT 1 FROM ESTUDIANTES WHERE NICK = pv_username AND CONTRASENA = MD5(pv_password));
+    
+    IF _table like 'S' THEN
+		SET pv_success = (SELECT 1 FROM ESTUDIANTES WHERE NICK LIKE pv_username AND CONTRASENA LIKE MD5(pv_password));
+        if (pv_success is null) then
+			set pv_success = 0;
+		end if;
     END IF;
-    IF _table = 'T' THEN
-        SET pv_success = (SELECT 1 FROM DOCENTES WHERE NICK = pv_username AND CONTRASENA = MD5(pv_password));
+    IF _table like 'T' THEN
+        SET pv_success = (SELECT 1 FROM DOCENTES WHERE NICK LIKE pv_username AND CONTRASENA LIKE MD5(pv_password));
+        if (pv_success is null) then
+			set pv_success = 0;
+		end if;
     END IF;
-    IF _table = 'P' THEN
-        SET pv_success = (SELECT 1 FROM TUTORES WHERE NICK = pv_username AND CONTRASENA = MD5(pv_password));
+    IF _table like 'P' THEN
+        SET pv_success = (SELECT 1 FROM TUTORES WHERE NICK = pv_username AND CONTRASENA LIKE MD5(pv_password));
+        if (pv_success is null) then
+			set pv_success = 0;
+		end if;
     END IF;    
 END ;
- 
-CREATE PROCEDURE pa_delete(INT pv_idgrupo INT , OUT pv_success BOOLEAN)
+//delimiter ; 
+
+DELIMITER //
+drop procedure if exists pa_delete;
+CREATE PROCEDURE pa_delete(IN pv_idgrupo INT , OUT pv_success BOOLEAN)
 BEGIN
     UPDATE GRUPOS SET DELETED = 1, FECHA_DELETED = CURRENT_TIMESTAMP() WHERE ID = pv_idgrupo;
 END ;
@@ -498,12 +519,12 @@ END ;
 CREATE PROCEDURE pa_create_license(OUT key VARCHAR(100))
 BEGIN
     SET key = GenerarLicence();
-END ;
-DELIMITER ;
+END 
+// DELIMITER ;
  
- 
+ DELIMITER //
 drop function if exists GenerateLicence;
-DELIMITER //
+
 CREATE FUNCTION GenerateLicence()
 returns varchar(29)
 begin
