@@ -19,6 +19,9 @@
     <Compile Update="Pages\Musica.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\PonerNotas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Blink.xaml">
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Musica.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PonerNotas.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

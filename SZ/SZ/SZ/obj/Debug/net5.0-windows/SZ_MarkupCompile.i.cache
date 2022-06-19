@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\
+C:\Users\Usuario\OneDrive\Escritorio\ProyectoFCT\SZ\SZ\SZ\obj\Debug\net5.0-windows\
 SZ
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\admin-dam2b\Desktop\ProyectoFCT\SZ\SZ\SZ\App.xaml
-9787690326
+C:\Users\Usuario\OneDrive\Escritorio\ProyectoFCT\SZ\SZ\SZ\App.xaml
+10-793701750
 17-2124419495
-15606920260
-204-217564487
-Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
+17932892723
+207436559186
+Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Credits.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;Pages\PonerNotas.xaml;
 
-False
+True
 

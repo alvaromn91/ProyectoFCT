@@ -25,9 +25,22 @@ namespace SZ
         private string _photoRoute;
         private string _password;
         private string _stringBirth;
+        private string _doc_nick;
         public Student() 
         { 
 
+        }
+        public Student(List<object> param)
+        {
+            _name = param[0].ToString();
+            _surname1 = param[1].ToString();
+            _surname2 = param[2].ToString();
+            _birth = (DateTime)param[3];
+            _address = param[4].ToString();
+            _medical = param[5].ToString();
+            _observations = param[6].ToString();
+            _doc_nick = param[7].ToString();
+            StringBirth = _birth.ToString("dd/MM/yyyy");
         }
 
         public Student(string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string password, string medical, string observations, string photoRoute)
@@ -64,9 +77,10 @@ namespace SZ
         public string PhotoRoute { get => _photoRoute; set => _photoRoute = value; }
         public string Password { get => _password; set => _password = value; }
         public string StringBirth { get => _stringBirth; set => _stringBirth = value; }
+        public string Doc_nick { get => _doc_nick; set => _doc_nick = value; }
 
-        
-        
+
+
         //public int AddStudent(string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string medical, string observations, string photoRoute)
         //{
         //    

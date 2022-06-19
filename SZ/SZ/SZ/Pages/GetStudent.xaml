@@ -96,7 +96,7 @@
                 <TextBlock x:Name="tbk_Observations" FontSize="24" Width="280" Text="{Binding Path=Observations}" FontFamily="Bernard MT Condensed" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
             </StackPanel>
             <StackPanel Margin="30">
-                <Button x:Name="btn_back" Click="btn_back_Click" HorizontalAlignment="Center" Margin="10" Visibility="Collapsed" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand">Atrás</Button>
+                <Button x:Name="btn_back" Click="btn_back_Click" HorizontalAlignment="Center" Margin="10" Visibility="Visible" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand">Atrás</Button>
             </StackPanel>
             <Button Width="100" Height="80" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" FontFamily="Bernard MT" Click="BuscarEstudiante">
                 <Button.Content>
@@ -105,7 +105,7 @@
             </Button>
         </WrapPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
-            
+            <Button x:Name="btn_back_1" Click="btn_back_Click" HorizontalAlignment="Center" Margin="10" Visibility="Visible" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand">Atrás</Button>
         </StackPanel>
     </Grid>
 </Page>

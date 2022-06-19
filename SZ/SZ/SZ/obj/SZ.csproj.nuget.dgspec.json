@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj": {}
+    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj": {
+    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
         "projectName": "SZ",
-        "projectPath": "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
-        "packagesPath": "C:\\Users\\admin-dam2b\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin-dam2b\\Desktop\\ProyectoFCT\\SZ\\SZ\\SZ\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin-dam2b\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "FontAwesome.WPF": {
               "target": "Package",
               "version": "[4.7.0.9, )"
@@ -51,6 +55,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.28, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
             }
           },
           "imports": [
@@ -71,7 +79,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

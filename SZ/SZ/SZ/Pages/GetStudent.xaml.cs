@@ -23,18 +23,26 @@ namespace SZ.Pages
             InitializeComponent();
             App.Parent.title2.Visibility = Visibility.Collapsed;
             App.Parent.DataContext = null;
+            
         }
 
         private void btn_Search_Click(object sender, RoutedEventArgs e)
         {
-            var datos = new AccesoDatos().GetStudent(tb_Name.Text.ToString(), tb_SN1.Text.ToString(), tb_SN2.Text.ToString());
+            try
+            {
+                Student datos = new Student(new AccesoDatos().GetStudent(tb_Name.Text.ToString(), tb_SN1.Text.ToString(), tb_SN2.Text.ToString()));
 
-            Student
-
-            datos.Count();
-
-            sp_Data.Visibility = Visibility.Visible;
-            btn_back.Visibility = Visibility.Visible;
+                //Student
+                DataContext = datos;
+                sp_Search.Visibility = Visibility.Hidden;
+                sp_Data.Visibility = Visibility.Visible;
+                btn_back_1.Visibility = Visibility.Hidden;
+                
+                
+            }
+            catch {
+                MessageBox.Show("Usuario no encontrado");
+            }
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
@@ -43,7 +51,12 @@ namespace SZ.Pages
         }
          public void BuscarEstudiante(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hacer cosas , vagos.");
+            sp_Search.Visibility = Visibility.Visible;
+            sp_Data.Visibility = Visibility.Hidden;
+            btn_back_1.Visibility = Visibility.Visible;
+            tb_Name.Text = "";
+            tb_SN1.Text = "";
+            tb_SN2.Text = "";
         }
     }
 }
