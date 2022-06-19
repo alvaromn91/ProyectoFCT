@@ -57,3 +57,6 @@ FROM
     
     JOIN DOCENTES D
     ON G.ID_DOCENTE = D.ID;
+    
+Create view vw_nick_pass_alumno as
+Select NICK, CONTRASENA from estudiantes

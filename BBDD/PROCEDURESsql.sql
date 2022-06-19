@@ -73,11 +73,11 @@ CREATE PROCEDURE pa_anadir_estudiante(in pv_nombre Varchar(50),
                                     in pv_direccion varchar(200),
                                     in pv_email varchar(100),
                                     in pt_datMedico text,
+                                    in pv_contrasena text,
                                     in pt_observaciones text,
                                     in pt_ruta_foto text,
                                     in pt_colegio text,
                                     out pi_r INT)
-
 BEGIN
 
 DECLARE vb_id INT;
@@ -94,10 +94,11 @@ INSERT INTO ESTUDIANTES (NOMBRE,
                         CP,
                         DIRECCION,
                         EMAIL,
+                        CONTRASENA,
                         DELETED, 
                         F_BORRADO
                         )
-                        VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email, 0, NULL);
+                        VALUES(pv_nombre, pv_apellido1, pv_apellido2, pdt_nacimiento, pv_nacionalidad, pv_pais, pv_ciudad, pi_cp, pv_direccion, pv_email,pv_contrasena, 0, NULL);
 SET pi_r = 1;
 set vb_id = (SELECT ID FROM ESTUDIANTES WHERE NOMBRE like pv_nombre and APELLIDO_1 LIKE pv_apellido1 and APELLIDO_2 LIKE pv_apellido2);
 CALL PA_CREAR_NICK('S', pt_colegio, vb_id, @TEMP);

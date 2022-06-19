@@ -13,6 +13,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Mail;
+using System.Configuration;
+using System.Web;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 
 namespace SZ.Pages
 {
@@ -21,8 +27,8 @@ namespace SZ.Pages
     /// </summary>
     public partial class AddStudent : Page
     {
-        
-        
+       string contra;
+
         public AddStudent()
         {
             InitializeComponent();
@@ -30,6 +36,17 @@ namespace SZ.Pages
 
         private void btn_SignUp_Click(object sender, RoutedEventArgs e)
         {
+            Random rdn = new Random();
+            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
+            int longitud = caracteres.Length;
+            char letra;
+            int longitudContrasenia = 10;
+            for (int i = 0; i < longitudContrasenia; i++)
+            {
+                letra = caracteres[rdn.Next(longitud)];
+                contra += letra.ToString();
+            }
+
             bool vacio = false;
             if (tb_Name.Text == string.Empty)
             {
@@ -86,34 +103,58 @@ namespace SZ.Pages
                 req_ema.Foreground = Brushes.Red;
                 vacio = true;
             }
-            if (tb_Password.Password.ToString() == string.Empty)
-            {
-                req_pas.Visibility = Visibility.Visible;
-                req_pas.Foreground = Brushes.Red;
-                vacio = true;
-            }
-            if (cal_Birth.DisplayDate.Date == DateTime.Today.Date)
-            {
-                req_cal.Visibility = Visibility.Visible;
-                req_cal.Foreground = Brushes.Red;
-                vacio = true;
-            }
+            //if (tb_Password.Password.ToString() == string.Empty)
+            //{
+            //    req_pas.Visibility = Visibility.Visible;
+            //    req_pas.Foreground = Brushes.Red;
+            //    vacio = true;
+            //}
+            //if (cal_Birth.DisplayDate.Date == DateTime.Today.Date)
+            //{
+            //    req_cal.Visibility = Visibility.Visible;
+            //    req_cal.Foreground = Brushes.Red;
+            //    vacio = true;
+            //}
 
             if (!vacio)
             {
                 DateTime fecha = cal_Birth.SelectedDate.GetValueOrDefault();
                 Student student = new Student(tb_Name.Text.ToString(), tb_Surname1.Text.ToString(), tb_Surname2.Text.ToString(), fecha, tb_Nationality.Text.ToString(), 
                                               tb_Country.Text.ToString(), tb_City.Text.ToString(), tb_PostalCode.Text.ToString(), tb_Address.Text.ToString(), 
-                                              tb_Email.Text.ToString(), tb_Password.Password.ToString(), tb_Medical.Text.ToString(), tb_Observations.Text.ToString(), 
+                                              tb_Email.Text.ToString(), contra, tb_Medical.Text.ToString(), tb_Observations.Text.ToString(), 
                                               img_Photo.Source.ToString());
                 AccesoDatos con = new AccesoDatos();
-                int r = con.AddStudent(App.nick, student.Name, student.Surname1, student.Surname2, student.Birth, student.Nationality, student.Country, 
+                int r = con.annadir_estudiante("JOYFE", student.Name, student.Surname1, student.Surname2, student.Birth, student.Nationality, student.Country, 
                                        student.City, student.PostalCode, student.Address, student.Email, student.Password, student.Medical, student.Observations, student.PhotoRoute);
                 if (r == 0)
                 {
                     tb_sign_up.Visibility = Visibility.Visible;
                     App.Parent.parent.NavigationService.Navigate(new AddStudent());
                 }
+
+                MailMessage msg = new MailMessage();
+
+                msg.From = new MailAddress("schoolerzz@outlook.com");
+                msg.To.Add(tb_Email.Text);//Correo destino
+                msg.Subject = "Datos de acceso a Schoolerzz";
+                msg.Body = "Bienvenido a Schoolerzz.\nAqui le dejamos su usuario y contraseña.\nUsuario: "+new AccesoDatos().getNick(student.Email) + "\nContraseña: " + contra;
+                //msg.Priority = MailPriority.High;
+
+
+                using (SmtpClient client = new SmtpClient())
+                {
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential("schoolerzz@outlook.com", "Joyfe2022");
+                    client.Host = "smtp.office365.com";
+                    client.Port = 587;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                    client.Send(msg);
+                    MessageBox.Show("hecho");
+                }
+
+
             }
             else 
             {

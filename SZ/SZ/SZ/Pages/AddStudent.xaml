@@ -96,7 +96,7 @@
         <StackPanel Grid.Row="2" Grid.Column="0">
             <TextBlock Text="Alumno Registrado" Margin="0,50,0,0" Visibility="Collapsed" x:Name="tb_sign_up" FontSize="32" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FF009688"/>
         </StackPanel>
-        
+
         <Button x:Name="btn_SignUp" Click="btn_SignUp_Click"  HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Grid.Column="2" Grid.Row="2">Registrar</Button>
     </Grid>
 </Page>

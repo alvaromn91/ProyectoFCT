@@ -29,7 +29,7 @@ namespace SZ
         {
             App.Parent = this;
             //this.parent.Navigate(login);
-            this.parent.Navigate(new PonerNotas());
+            this.parent.Navigate(new AddStudent());
         }
 
         private void btn_Search_S_Click(object sender, RoutedEventArgs e)

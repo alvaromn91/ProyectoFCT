@@ -12,7 +12,7 @@ namespace SZ
 {
     public class AccesoDatos
     {
-        string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=Jaime;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=localhost;port=3306;username=oscar;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=172.16.51.7;port=3306;username=root;password=1234;database=schoolerzz;";
 
@@ -83,25 +83,25 @@ namespace SZ
             return lista;
 
         }
-        public int AddStudent(string manager, string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string password, string medical, string observations, string photoRoute)
+        public int annadir_estudiante(string colegio, string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string password, string medical, string observations, string photoRoute)
         {
-            MySqlCommand cmd = new MySqlCommand("pa_AddStudent", databaseConnection);
+            MySqlCommand cmd = new MySqlCommand("pa_anadir_estudiante", databaseConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new MySqlParameter("pv_School_Manager_Nick", manager)); 
-            cmd.Parameters.Add(new MySqlParameter("pv_Name", name));
-            cmd.Parameters.Add(new MySqlParameter("pv_SN1", surname1));
-            cmd.Parameters.Add(new MySqlParameter("pv_SN2", surname2));
-            cmd.Parameters.Add(new MySqlParameter("pdt_Birth", birth));
-            cmd.Parameters.Add(new MySqlParameter("pv_Nationality", nationality));
-            cmd.Parameters.Add(new MySqlParameter("pv_Country", country));
-            cmd.Parameters.Add(new MySqlParameter("pv_City", city));
-            cmd.Parameters.Add(new MySqlParameter("pv_PostalCode", postalCode));
-            cmd.Parameters.Add(new MySqlParameter("pv_Address", address));
-            cmd.Parameters.Add(new MySqlParameter("pv_Email", email));
-            cmd.Parameters.Add(new MySqlParameter("pv_Password", password));
-            cmd.Parameters.Add(new MySqlParameter("pt_Medical", medical));
-            cmd.Parameters.Add(new MySqlParameter("pt_Observations", observations));
-            cmd.Parameters.Add(new MySqlParameter("pt_Photo_Internal_Route", photoRoute));
+            cmd.Parameters.Add(new MySqlParameter("pt_colegio", colegio)); 
+            cmd.Parameters.Add(new MySqlParameter("pv_nombre", name));
+            cmd.Parameters.Add(new MySqlParameter("pv_apellido1", surname1));
+            cmd.Parameters.Add(new MySqlParameter("pv_apellido2", surname2));
+            cmd.Parameters.Add(new MySqlParameter("pdt_nacimiento", birth));
+            cmd.Parameters.Add(new MySqlParameter("pv_nacionalidad", nationality));
+            cmd.Parameters.Add(new MySqlParameter("pv_pais", country));
+            cmd.Parameters.Add(new MySqlParameter("pv_ciudad", city));
+            cmd.Parameters.Add(new MySqlParameter("pi_cp", postalCode));
+            cmd.Parameters.Add(new MySqlParameter("pv_direccion", address));
+            cmd.Parameters.Add(new MySqlParameter("pv_email", email));
+            cmd.Parameters.Add(new MySqlParameter("pv_contrasena", password));
+            cmd.Parameters.Add(new MySqlParameter("pt_datMedico", medical));
+            cmd.Parameters.Add(new MySqlParameter("pt_observaciones", observations));
+            cmd.Parameters.Add(new MySqlParameter("pt_ruta_foto", photoRoute));
 
             cmd.Parameters.Add(new MySqlParameter("pi_r", MySqlDbType.Int32));
             cmd.Parameters["pi_r"].Direction = ParameterDirection.Output;
@@ -159,6 +159,29 @@ namespace SZ
             
             return lista;
         }
+
+        public string getNick( String email) {
+            string sql = @"SELECT NICK FROM estudiantes WHERE email = @email limit 1";
+            MySqlCommand cmd = new MySqlCommand(sql, databaseConnection);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new MySqlParameter("@email", email));
+
+            EstablecerConexion();
+
+            MySqlDataReader rdr = cmd.ExecuteReader(); // FALLAAAAAAAAAAAAA
+            if (rdr.Read()) {
+                string nick = rdr.GetValue(0).ToString();
+            
+                rdr.Close();
+                CerrarConexion();
+                return nick;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public int DeleteStudent(string name, string apellido1, string apellido2)
         {
             MySqlCommand cmd = new MySqlCommand("pa_DeleteStudent", databaseConnection);

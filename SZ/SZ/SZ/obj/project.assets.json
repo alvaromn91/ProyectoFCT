@@ -1540,19 +1540,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\jrobl\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
+      "projectUniqueName": "C:\\Users\\jrobl\\Desktop\\FINALFCT\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
       "projectName": "SZ",
-      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\ProyectoFCT\\SZ\\SZ\\SZ\\obj\\",
+      "projectPath": "C:\\Users\\jrobl\\Desktop\\FINALFCT\\ProyectoFCT\\SZ\\SZ\\SZ\\SZ.csproj",
+      "packagesPath": "C:\\Users\\jrobl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jrobl\\Desktop\\FINALFCT\\ProyectoFCT\\SZ\\SZ\\SZ\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jrobl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
