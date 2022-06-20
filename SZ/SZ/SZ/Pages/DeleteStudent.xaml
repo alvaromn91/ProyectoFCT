@@ -51,5 +51,6 @@
             <TextBlock Text="Alumno Borrado" Margin="0,50,0,0" Visibility="Collapsed" x:Name="tb_delete" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FF009688" VerticalAlignment="Top"/>
             <TextBlock Text="No se ha borrado ningún alumno" Margin="0,50,0,0" Visibility="Collapsed" x:Name="tb_non_deleted" FontSize="50" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="red" VerticalAlignment="Top"/>
         </StackPanel>
+        <Button x:Name="btn_back_1" Click="btn_back_Click" Visibility="Visible" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" FontFamily="Bernard MT" Height="50" Width="300" Cursor="Hand" Content="Atrás" Margin="10,10,86,40" Grid.Column="2" Grid.Row="2"/>
     </Grid>
 </Page>

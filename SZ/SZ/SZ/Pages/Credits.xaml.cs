@@ -25,5 +25,10 @@ namespace SZ.Pages
             InitializeComponent();
             App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
         }
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new MainMenu());
+        }
     }
+    
 }

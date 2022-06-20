@@ -24,7 +24,10 @@ namespace SZ.Pages
         {
             InitializeComponent();
         }
-
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new MainMenu());
+        }
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
             bool vacio = false;

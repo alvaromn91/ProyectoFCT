@@ -148,19 +148,19 @@
         -->
         <StackPanel Background="#FFD06E3F" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="25,15,0,0" VerticalAlignment="Center">
-                <Button x:Name="btn_twitter" HorizontalAlignment="Center" Background="#00F0F8FF" BorderBrush="#00E8C56A" Padding="16,4,16,4" FontSize="1" Height="46" Width="72" Cursor="Hand">
+                <Button x:Name="btn_twitter" HorizontalAlignment="Center" Background="#00F0F8FF" BorderBrush="#00E8C56A" Padding="16,4,16,4" FontSize="1" Height="46" Width="72" Cursor="Hand" Click="btn_Twitter_Click">
                     <Button.Content>
                         <fa:ImageAwesome Icon="Twitter" Foreground="Aqua" Width="40" Height="40"></fa:ImageAwesome>
                     </Button.Content>
                 </Button>
 
-                <Button x:Name="btn_Insta" HorizontalAlignment="Center" Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="48">
+                <Button x:Name="btn_Insta" HorizontalAlignment="Center" Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="48" Click="btn_Instagram_Click">
                     <Button.Content>
                         <fa:ImageAwesome Icon="Instagram" Foreground="#FFD100FF" Width="40" Height="40"></fa:ImageAwesome>
                     </Button.Content>
                 </Button>
 
-                <Button x:Name="btn_Facebook" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="46">
+                <Button x:Name="btn_Facebook" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="46" Click="btn_Facebook_Click">
                     <Button.Content>
                         <fa:ImageAwesome Icon="FacebookOfficial" Foreground="Blue" Width="40" Height="40" RenderTransformOrigin="0.601,-0.133"/>
                     </Button.Content>

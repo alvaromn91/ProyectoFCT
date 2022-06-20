@@ -111,7 +111,12 @@ namespace SZ.Pages
                 MessageBox.Show(t);
             }
         }
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new MainMenu());
+        }
     }
+
     public partial class Data
     {
         public double MaxWidth { get; set; }

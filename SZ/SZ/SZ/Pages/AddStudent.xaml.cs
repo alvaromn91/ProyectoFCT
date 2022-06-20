@@ -157,7 +157,10 @@ namespace SZ.Pages
             }
 
         }
-
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new MainMenu());
+        }
         private void btn_Image_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();

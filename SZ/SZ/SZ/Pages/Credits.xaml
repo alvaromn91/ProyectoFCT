@@ -29,6 +29,7 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
             <Image Source="../images/mojo.png" Width="400"/>
         </StackPanel>
+        <Button x:Name="btn_back_1" Click="btn_back_Click" Visibility="Visible" FontSize="20"  Background="#FFCC6649" Height="50" Width="170" BorderBrush="#FFCC6649" Foreground="White" FontFamily="Bernard MT" Cursor="Hand" Content="Atrás" Margin="620,408,10,10"/>
 
     </Grid>
 </Page>
