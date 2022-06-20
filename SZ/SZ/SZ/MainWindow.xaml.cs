@@ -52,7 +52,7 @@ namespace SZ
         {
             ProcessStartInfo psi = new ProcessStartInfo
             {
-                FileName = "https://www.instagram.com/?hl=es",
+                FileName = "https://www.instagram.com/schoolerzz/",
                 UseShellExecute = true
             };
             Process.Start(psi);
